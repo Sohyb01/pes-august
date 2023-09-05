@@ -5,8 +5,8 @@ export default function Home() {
     // All sections container
     <div className="flex flex-col items-center w-full">
       {/* Hero Section */}
-      <section className="flex pb-[72px] relative flex-col items-center w-full">
-        <div className="hero-section-content pt-[144px] flex flex-col items-center gap-20 max-w-[656px]">
+      <section className="flex pb-[72px] section__styles relative flex-col items-center w-full">
+        <div className="hero-section-content pt-[144px] flex flex-col items-center gap-20 max-w-[656px] z-10">
           {/* Header, subtext, & Buttons */}
           <div className="flex flex-col items-center gap-8">
             {/* Header and subtext */}
@@ -21,17 +21,22 @@ export default function Home() {
             </div>
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <button className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect">
+              <a
+                target="_blank"
+                href="https://wa.me/201222903316"
+                className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
+              >
                 Join a course
-              </button>
-              <button className="bg-white hover:bg-blue-100 duration-100  text-center grid place-items-center px-6 py-3 w-[160px] text-blue-900 font-bold shadow-effect hidden">
+              </a>
+              {/* Hidden for now! */}
+              <button className="bg-white hover:bg-blue-100 duration-100 text-center place-items-center px-6 py-3 w-[160px] text-blue-900 font-bold shadow-effect hidden gridd">
                 Contact us
               </button>
             </div>
           </div>
           {/* Video */}
-          <div className="grid cursor-pointer place-items-center rounded-[3px] aspect-video w-full relative max-w-[484px] hero-video after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 bg-cover bg-center bg-no-repeat">
-            <svg
+          <div className="rounded-[3px] w-full relative max-w-[484px]">
+            {/* <svg
               className="z-50"
               xmlns="http://www.w3.org/2000/svg"
               width="40"
@@ -53,14 +58,20 @@ export default function Home() {
                 stroke="#1E3A8A"
                 stroke-width="2"
               />
-            </svg>
+            </svg> */}
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpesmisr%2Fvideos%2F1094362274448679%2F&show_text=false&t=0&mute=0"
+              className="border-none overflow-hidden w-full aspect-[484/304]"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen={true}
+            ></iframe>
           </div>
         </div>
         {/* BG Graphics container */}
-        <div className="hidden lg:block absolute w-full max-w-[1080px] h-full">
+        <div className="hidden md:block absolute w-full max-w-[768px] lg:max-w-[1080px] h-full">
           {/* Graphics */}
           <svg
-            className="absolute top-[144px] left-[128px]"
+            className="absolute top-[100px] left-[52px] lg:top-[144px] lg:left-[128px]"
             xmlns="http://www.w3.org/2000/svg"
             width="72"
             height="87"
@@ -73,7 +84,7 @@ export default function Home() {
             />
           </svg>
           <svg
-            className="absolute top-[477px] right-[204px]"
+            className="absolute top-[620px] lg:top-[477px] right-[86px] lg:right-[204px]"
             xmlns="http://www.w3.org/2000/svg"
             width="36"
             height="44"
@@ -86,7 +97,7 @@ export default function Home() {
             />
           </svg>
           <svg
-            className="absolute bottom-[0px] left-[144px]"
+            className="absolute bottom-[102px] lg:bottom-[0px] left-[48px] lg:left-[144px]"
             xmlns="http://www.w3.org/2000/svg"
             width="56"
             height="68"
@@ -98,9 +109,22 @@ export default function Home() {
               fill="#FBCFE8"
             />
           </svg>
-          <div className="graphic-img-1 bg-cover absolute bg-center w-[144px] top-[407px] left-10 h-[226.01px]"></div>
-          <div className="graphic-img-2 bg-cover top-[144px] right-10 absolute bg-center w-[144px] h-[190.5px]"></div>
-          <div className="graphic-img-3 bg-cover absolute bg-center w-[144px] h-[216.99px] bottom-0 right-10"></div>
+          <svg
+            className="hidden md:block absolute lg:hidden right-5 top-[756px]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="54"
+            height="65"
+            viewBox="0 0 54 65"
+            fill="none"
+          >
+            <path
+              d="M0 13.3848L54 0V47.739L3.57025 61.1238L0 64.6931V13.3848Z"
+              fill="#C7D2FE"
+            />
+          </svg>
+          <div className="graphic-img-1 bg-cover absolute bg-center w-[108px] lg:w-[144px] top-[380px] left-5 lg:top-[407px] lg:left-10 aspect-[108/169.51]"></div>
+          <div className="graphic-img-2 bg-cover top-[380px] right-5 lg:top-[144px] lg:right-10 absolute bg-center w-[108px] lg:w-[144px]  aspect-[108/142.88]"></div>
+          <div className="graphic-img-3 bg-cover hidden lg:block absolute bg-center w-[144px] h-[216.99px] bottom-0 right-10"></div>
         </div>
       </section>
       {/* Statistics Section */}
@@ -215,9 +239,13 @@ export default function Home() {
           {/* Frame */}
           <div className="frame-1 bg-cover bg-center relative md:w-full after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 aspect-video flex flex-col items-center justify-center gap-4 bg-neutral-700">
             <p className="text-lg text-white z-20">Learn at Centre</p>
-            <button className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect">
+            <a
+              target="_blank"
+              href="https://wa.me/201222903316"
+              className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+            >
               Join a course
-            </button>
+            </a>
           </div>
           {/* Frame */}
           <div className="frame-2 bg-cover bg-center relative md:w-full after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 aspect-video flex flex-col items-center justify-center gap-4 bg-neutral-700">
