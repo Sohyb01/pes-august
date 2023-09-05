@@ -3,7 +3,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 py-3 z-50 bg-blue-700 w-full text-white">
+    <nav className="fixed top-0 py-3 z-[10000] bg-blue-700 w-full text-white">
       <div className="section__styles mx-auto flex justify-between">
         {/* Logo */}
         <Link href="/">

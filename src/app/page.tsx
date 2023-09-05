@@ -24,7 +24,7 @@ export default function Home() {
               <button className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect">
                 Join a course
               </button>
-              <button className="bg-white hover:bg-blue-100 duration-100  text-center grid place-items-center px-6 py-3 w-[160px] text-blue-900 font-bold shadow-effect">
+              <button className="bg-white hover:bg-blue-100 duration-100  text-center grid place-items-center px-6 py-3 w-[160px] text-blue-900 font-bold shadow-effect hidden">
                 Contact us
               </button>
             </div>
@@ -193,7 +193,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <a href="" className="text-blue-700 underline text-lg">
+        <a href="" className="text-blue-700 underline text-lg hidden">
           View more testimonials &gt;
         </a>
       </div>
@@ -211,7 +211,7 @@ export default function Home() {
           </p>
         </div>
         {/* Frames container */}
-        <div className="flex flex-col md:flex-row gap-4 w-full">
+        <div className="flex flex-col md:flex-row gap-8 w-full">
           {/* Frame */}
           <div className="frame-1 bg-cover bg-center relative md:w-full after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 aspect-video flex flex-col items-center justify-center gap-4 bg-neutral-700">
             <p className="text-lg text-white z-20">Learn at Centre</p>
@@ -233,7 +233,7 @@ export default function Home() {
         <h1 className="text-blue-700 font-semibold text-2xl">
           Your questions, answered
         </h1>
-        <div className="join join-vertical w-full rounded-[0px]">
+        <div className="join join-vertical w-full rounded-[0px] text-lg">
           <div className="collapse collapse-arrow join-item shadow-effect bg-white">
             <input type="radio" name="my-accordion-4" />
             <div className="collapse-title text-md font-semibold text-blue-900">
