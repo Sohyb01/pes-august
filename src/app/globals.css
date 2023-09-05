@@ -2,26 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  line-height: 144%;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+  @apply bg-blue-50
+}
+
+.section__styles {
+  @apply  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12
+  /* py-10 xl:py-20 */
+  sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl mx-auto;
+}
+
+.shadow-effect{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.heading{
+  letter-spacing: -1.5px;
+  @apply
+  leading-[120%]
+}
+
+.nav-logo{
+  background-image: url(./images/logo-white-2.png);
+}
+
+.hero-video{
+  background-image: url(./images/video-image-min.png);
+}
+.testimonial-image{
+  left: calc(50% - 40px);
+}
+
+.frame-1{
+  background-image: url(./images/Frame1-min.png);
+}
+.frame-2{
+  background-image: url(./images/Frame2-min.png);
+}
+
+.graphic-img-1{
+  background-image: url(./images/hero-graphic-1.png);
+}
+.graphic-img-2{
+  background-image: url(./images/hero-graphic-2.png);
+}
+.graphic-img-3{
+  background-image: url(./images/hero-graphic-3.png);
 }
