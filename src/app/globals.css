@@ -11,7 +11,7 @@ body {
 }
 
 .section__styles {
-  @apply  px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12
+  @apply  px-4 sm:px-6 md:px-8 lg:px-10
   /* py-10 xl:py-20 */
   sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg mx-auto;
 }
