@@ -35,9 +35,13 @@ export default function Home() {
             </div>
           </div>
           {/* Video */}
-          <div className="rounded-[3px] w-full relative max-w-[484px]">
-            {/* <svg
-              className="z-50"
+          <a
+            href="https://fb.watch/mXbuC7iQz9/"
+            target="_blank"
+            className="rounded-[3px] w-full relative max-w-[484px] hero-video"
+          >
+            <svg
+              className="z-10"
               xmlns="http://www.w3.org/2000/svg"
               width="40"
               height="40"
@@ -58,14 +62,14 @@ export default function Home() {
                 stroke="#1E3A8A"
                 strokeWidth="2"
               />
-            </svg> */}
-            <iframe
+            </svg>
+            {/* <iframe
               src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fpesmisr%2Fvideos%2F1094362274448679%2F&show_text=false&t=0&mute=0"
               className="border-none overflow-hidden w-full aspect-[484/304]"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               allowFullScreen={true}
-            ></iframe>
-          </div>
+            ></iframe> */}
+          </a>
         </div>
         {/* BG Graphics container */}
         <div className="hidden md:block absolute w-full max-w-[768px] lg:max-w-[1080px] h-full">
@@ -128,9 +132,9 @@ export default function Home() {
         </div>
       </section>
       {/* Statistics Section */}
-      <section className="flex flex-col w-full my-[72px]">
+      <section className="flex flex-col w-full my-[72px] px-4 sm:px-6 md:px-0 max-w-[480px] md:max-w-none">
         {/* Statistics container */}
-        <div className="flex flex-col relative sm:flex-row sm:flex-wrap items-center justify-center gap-4 md:justify-between section__styles py-6 w-full ">
+        <div className="flex flex-wrap relative items-center justify-center gap-4 md:justify-between section__styles py-6 w-full bg-white md:bg-transparent shadow-md md:shadow-none">
           {/* Statistic */}
           <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">850+</h1>

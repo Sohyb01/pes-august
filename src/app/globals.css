@@ -31,13 +31,14 @@ body {
 }
 
 .hero-video{
-  background-image: url(./images/video-image-min.png);
+  background-image: url(./images/video-image-small-min.png);
+  @apply  aspect-video bg-cover grid place-items-center bg-center after:absolute after:h-full after:w-full after:z-[1] after:bg-blue-900 after:opacity-50
 }
 .testimonial-img{
-  background-image: url(./images/instructor-testimonials-min.png);
+  background-image: url(./images/testimonials-small-min.png);
 }
 .faq-img{
-  background-image: url(./images/faq.png);
+  background-image: url(./images/faq-small-min.png);
 }
 
 .frame-1{
