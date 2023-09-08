@@ -128,40 +128,42 @@ export default function Home() {
         </div>
       </section>
       {/* Statistics Section */}
-      <section className="flex flex-col w-full shadow-effect bg-white my-[72px]">
+      <section className="flex flex-col w-full my-[72px]">
         {/* Statistics container */}
-        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-4 md:justify-between section__styles py-6 w-full ">
+        <div className="flex flex-col relative sm:flex-row sm:flex-wrap items-center justify-center gap-4 md:justify-between section__styles py-6 w-full ">
           {/* Statistic */}
-          <div className="w-[160px] flex flex-col text-center items-center">
+          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">850+</h1>
             <p className="-mt-2 text-md font-semibold text-blue-900">
               Students
             </p>
           </div>
-          <div className="w-[160px] flex flex-col text-center items-center">
+          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">1.7k</h1>
             <p className="-mt-2 text-md font-semibold text-blue-900">
               Hours of Support
             </p>
           </div>
-          <div className="w-[160px] flex flex-col text-center items-center">
+          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">8</h1>
             <p className="-mt-2 text-md font-semibold text-blue-900">
               Chief Experts
             </p>
           </div>
-          <div className="w-[160px] flex flex-col text-center items-center">
+          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">139</h1>
             <p className="-mt-2 text-md font-semibold text-blue-900">
               Projects
             </p>
           </div>
-          <div className="hidden w-[160px] lg:flex flex-col text-center items-center">
+          <div className="hidden w-[160px] lg:flex flex-col text-center items-center  md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">2+</h1>
             <p className="-mt-2 text-md font-semibold text-blue-900">
               Years of Experience
             </p>
           </div>
+          {/* Blue streak */}
+          <div className="hidden md:block absolute top-[88px] h-8 w-full max-w-[704px] lg:max-w-[1000px] bg-blue-600"></div>
         </div>
       </section>
       {/* Learn modern section (filler section) */}
