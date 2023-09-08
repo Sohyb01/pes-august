@@ -3,16 +3,39 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="fixed top-0 py-3 z-[10000] bg-blue-700 w-full text-white">
+    <nav className="fixed top-0 py-4 z-[10000] bg-blue-700 w-full text-white">
       <div className="section__styles mx-auto flex justify-between">
         {/* Logo */}
         <Link href="/">
           <div className="nav-logo w-[124px] h-[52px] bg-cover"></div>
         </Link>
-        {/* Socials container */}
-        <div className="flex items-center gap-4">
+        {/* Links & buttons container */}
+        <div className="flex items-center gap-8">
+          <Link href="/a" className="text-md text-white">
+            Home
+          </Link>
+          <Link href="/" className="text-md text-white">
+            About
+          </Link>
+          <Link href="/" className="text-md text-white">
+            Contact
+          </Link>
+          <Link
+            target="_blank"
+            href="https://wa.me/201222903316"
+            className="bg-white text-blue-700 hover:bg-blue-200 duration-100 text-center z-20 grid place-items-center px-6 py-3 font-bold shadow-effect"
+          >
+            Sign up
+          </Link>
+          <Link
+            target="_blank"
+            href="https://wa.me/201222903316"
+            className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+          >
+            View courses
+          </Link>
           {/* Whatsapp */}
-          <a
+          {/* <a
             target="_blank"
             href="https://wa.me/201222903316"
             className="flex gap-2 items-center"
@@ -30,7 +53,7 @@ function Navbar() {
               />
             </svg>
             <p className="underline">+20 122 290 3316</p>
-          </a>
+          </a> */}
         </div>
       </div>
     </nav>
