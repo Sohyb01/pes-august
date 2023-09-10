@@ -211,9 +211,9 @@ export default function Home() {
         {/* Testimonials and CTA */}
         <div className="flex flex-col lg:flex-row gap-8 lg:items-end">
           {/* Testimonials Container */}
-          <div className="flex flex-col items-center lg:max-w-[570px] shadow-effect rounded-[3px] overflow-scroll scroll-styling max-h-[736px] lg:max-h-[636px] testimonials-container">
+          <div className="flex flex-col items-center shadow-effect rounded-[3px] overflow-scroll scroll-styling max-h-[736px] lg:max-h-[636px] testimonials-container">
             {/* Individual Testimonials*/}
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
@@ -288,7 +288,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
@@ -363,7 +363,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
@@ -438,7 +438,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
@@ -513,7 +513,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
@@ -588,7 +588,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
+            <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid w-full">
               <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
