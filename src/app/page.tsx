@@ -214,13 +214,13 @@ export default function Home() {
           <div className="flex flex-col items-center lg:max-w-[570px] shadow-effect rounded-[3px] overflow-scroll scroll-styling max-h-[736px] lg:max-h-[636px] testimonials-container">
             {/* Individual Testimonials*/}
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -289,13 +289,13 @@ export default function Home() {
               </div>
             </div>
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -364,13 +364,13 @@ export default function Home() {
               </div>
             </div>
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -439,13 +439,13 @@ export default function Home() {
               </div>
             </div>
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -514,13 +514,13 @@ export default function Home() {
               </div>
             </div>
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -589,13 +589,13 @@ export default function Home() {
               </div>
             </div>
             <div className="even:bg-neutral-100 odd:bg-white flex flex-col gap-8 text-center items-center px-4 py-8  border-neutral-200 border-[2px] border-solid">
-              <p className="font-semibold text-lg text-neutral-500">
+              <p className="font-semibold text-md text-neutral-500">
                 Excellent education and amazing staff, My son learned coding in
                 less than 3 months! I couldn&apos;t be happier.
               </p>
               {/* Name and stars */}
               <div className="flex justify-center items-center gap-8 gap-y-2 flex-wrap">
-                <p className="text-blue-700 text-lg font-bold">
+                <p className="text-blue-700 text-md font-bold">
                   Dr/ Folan Elfolany
                 </p>
                 {/* Stars */}
@@ -776,13 +776,13 @@ export default function Home() {
               <div className="absolute bg-cover bg-center testimonial-img h-[333px] w-[294px] left-[52px]"></div>
             </div>
             <div className="flex flex-col items-center bg-white shadow-effect gap-4 w-full p-6 ">
-              <p className="text-lg text-blue-700 text-center">
+              <p className="text-md text-blue-700 text-center">
                 Are you a happy student or parent?
               </p>
               <a
                 target="_blank"
                 href="https://wa.me/201222903316"
-                className="bg-blue-700 hover:bg-blue-500 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+                className="bg-blue-700 text-md hover:bg-blue-500 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
               >
                 Leave a Testimonial
               </a>
@@ -831,9 +831,7 @@ export default function Home() {
           Your questions, answered
         </h1>
         <div className="flex flex-col lg:flex-row-reverse items-start w-full gap-8">
-          {/* Testimonials CTA */}
-
-          <div className="join join-vertical w-full rounded-[0px] text-lg">
+          <div className="join join-vertical w-full rounded-[0px] text-md">
             <div className="collapse collapse-arrow join-item shadow-effect bg-white">
               <input type="radio" name="my-accordion-4" />
               <div className="collapse-title text-md font-semibold text-blue-900">
@@ -1017,13 +1015,13 @@ export default function Home() {
               <div className="absolute bg-cover bg-center faq-img h-[333px] w-[329px] left-[52px]"></div>
             </div>
             <div className="flex flex-col items-center bg-white shadow-effect gap-4 w-full p-6 ">
-              <p className="text-lg text-blue-700 text-center">
+              <p className="text-md text-blue-700 text-center">
                 Have another question?
               </p>
               <a
                 target="_blank"
                 href="https://wa.me/201222903316"
-                className="bg-orange-600 hover:bg-orange-400 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+                className="bg-orange-600 hover:bg-orange-400 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect text-md"
               >
                 Contact us
               </a>
