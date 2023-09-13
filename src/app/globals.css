@@ -84,3 +84,8 @@ body {
 .scroll-styling::-webkit-scrollbar-thumb {
   @apply bg-blue-700
 }
+
+/* Form Input Fields */
+.input-field{
+  @apply rounded-[3px] h-10 px-4 bg-neutral-100 border-neutral-300 border-[1px] border-solid placeholder:text-neutral-500 w-full
+}
