@@ -87,5 +87,12 @@ body {
 
 /* Form Input Fields */
 .input-field{
-  @apply rounded-[3px] h-10 px-4 bg-neutral-100 border-neutral-300 border-[1px] border-solid placeholder:text-neutral-500 w-full
+  @apply rounded-[3px] h-10 px-4 bg-white border-neutral-300 border-[1px] border-solid text-neutral-800 focus:outline-none  placeholder:text-neutral-500 w-full 
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+  /* Set the background color to your desired value */
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: #001407;
 }
