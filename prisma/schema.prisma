@@ -10,6 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Certificate {
+  id String @id
+  studentName String
+  imgUrl String
+}
+
 model ApplicationData {
   applicationId String @id @default(uuid())
   createdAt DateTime @default(now())
@@ -21,6 +27,17 @@ model ApplicationData {
   studentMobile String?
   studentGender Gender
   studentHasLaptop YesOrNo
+}
+
+model User {
+  email    String @unique
+  password String
+  role Role @default(USER)
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 enum Gender {

@@ -96,3 +96,11 @@ select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
   -webkit-text-fill-color: #001407;
 }
+
+td, tr, th, tbody, thead {
+  @apply bg-white text-blue-900
+}
+
+td {
+  @apply w-[200px]
+}
