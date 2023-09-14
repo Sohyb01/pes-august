@@ -5,6 +5,10 @@
 * {
   line-height: 144%;
 }
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
 body {
   min-height: 100vh;
   @apply bg-blue-50
@@ -103,4 +107,7 @@ td, tr, th, tbody, thead {
 
 td {
   @apply w-[200px]
+}
+.nav-styling{
+  @apply hidden lg:flex
 }

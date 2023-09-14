@@ -46,7 +46,7 @@ function Footer() {
           <div className="flex gap-8">
             <a
               target="_blank"
-              href="https://wa.me/201222903316"
+              href="https://wa.me/201285488199"
               className="flex gap-2 items-center"
             >
               <svg

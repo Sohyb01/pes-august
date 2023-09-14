@@ -1,6 +1,7 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import type { NextAuthOptions } from "next-auth";
 import prisma from "@/app/lib/prisma";
+import { redirect } from "next/dist/server/api-utils";
 
 export const options: NextAuthOptions = {
   providers: [
@@ -62,7 +63,7 @@ export const options: NextAuthOptions = {
       return session;
     },
     async redirect({ url, baseUrl }) {
-      return "/";
+      return "/dashboard";
     },
   },
 };

@@ -70,7 +70,7 @@ const CertificatesPage = () => {
           </div>
         )}
         {certificate === null && (
-          <div className="flex flex-col items-center gap-5 hidden">
+          <div className="flexx flex-col items-center gap-5 hidden">
             <p className="text-red-600">
               No Certificate Found! Please enter a valid code
             </p>

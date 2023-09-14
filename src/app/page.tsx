@@ -23,7 +23,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <a
                 target="_blank"
-                href="https://wa.me/201222903316"
+                href="https://wa.me/201285488199"
                 className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
               >
                 Join a course
@@ -196,7 +196,7 @@ export default function Home() {
           {/* CTA Button */}
           <a
             target="_blank"
-            href="https://wa.me/201222903316"
+            href="https://wa.me/201285488199"
             className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
           >
             View courses
@@ -204,7 +204,10 @@ export default function Home() {
         </div>
       </div>
       {/* Testimonials Section */}
-      <div className="flex flex-col section__styles items-center py-[72px] gap-8 w-full">
+      <div
+        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
+        id="testimonials"
+      >
         <h1 className="text-2xl font-semibold text-blue-700">
           What others say
         </h1>
@@ -781,7 +784,7 @@ export default function Home() {
               </p>
               <a
                 target="_blank"
-                href="https://wa.me/201222903316"
+                href="https://wa.me/201285488199"
                 className="bg-blue-700 text-md hover:bg-blue-500 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
               >
                 Leave a Testimonial
@@ -810,7 +813,7 @@ export default function Home() {
             <p className="text-lg text-white z-20">Learn at Centre</p>
             <a
               target="_blank"
-              href="https://wa.me/201222903316"
+              href="https://wa.me/201285488199"
               className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
             >
               Join a course
@@ -826,7 +829,10 @@ export default function Home() {
         </div>
       </div>
       {/* FAQ Section */}
-      <div className="flex flex-col section__styles items-center py-[72px] gap-8 w-full">
+      <div
+        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
+        id="faq"
+      >
         <h1 className="text-blue-700 font-semibold text-2xl">
           Your questions, answered
         </h1>
@@ -1020,7 +1026,7 @@ export default function Home() {
               </p>
               <a
                 target="_blank"
-                href="https://wa.me/201222903316"
+                href="https://wa.me/201285488199"
                 className="bg-orange-600 hover:bg-orange-400 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect text-md"
               >
                 Contact us
