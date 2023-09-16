@@ -16,8 +16,14 @@ model Certificate {
   imgUrl String
 }
 
-model ApplicationData {
-  applicationId String @id @default(uuid())
+model QuestionData{
+  id Int @id @default(autoincrement())
+  mobileNumber String
+  message String
+}
+
+model ParentApplicationData {
+  applicationId Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   studentName String
   studentAge Int
@@ -27,6 +33,18 @@ model ApplicationData {
   studentMobile String?
   studentGender Gender
   studentHasLaptop YesOrNo
+}
+
+model StudentApplicationData {
+  applicationId Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  studentName String
+  studentUniversity String
+  studentFaculty String
+  studentAcademicYear String
+  studentEmail String
+  studentMobile String
+  studentAdditionalMessage String?
 }
 
 model User {

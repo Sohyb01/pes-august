@@ -2,14 +2,17 @@
 
 import prisma from "@/app/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { applicationFormSchema, applicationFormSchemaType } from "../lib/types";
+import {
+  studentApplicationFormSchema,
+  studentApplicationFormSchemaType,
+} from "../lib/types";
 import { redirect } from "next/navigation";
 
-export const addApplicationToDatabase = async (
-  formdata: applicationFormSchemaType
+export const addStudentApplicationToDatabase = async (
+  formdata: studentApplicationFormSchemaType
 ) => {
   // server-side validation
-  const result = applicationFormSchema.safeParse(formdata);
+  const result = studentApplicationFormSchema.safeParse(formdata);
   // In case of error
   if (!result.success) {
     let errorMessage = "Please fill out all required fields \n \n";
@@ -20,5 +23,5 @@ export const addApplicationToDatabase = async (
     return { error: errorMessage };
   }
 
-  await prisma.applicationData.create({ data: formdata });
+  await prisma.studentApplicationData.create({ data: formdata });
 };

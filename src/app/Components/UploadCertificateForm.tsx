@@ -62,26 +62,26 @@ function UploadCertificateForm() {
         required
         value={certificateCode}
       />
-      <UploadButton<OurFileRouter>
-        endpoint="imageUploader"
-        onClientUploadComplete={(res) => {
-          if (res) {
-            setImages(res);
-            const json = JSON.stringify(res);
-            // Do something with the response
-            toast.success(
-              "File Uploaded Successfully \n Complete the form and press submit!***"
-            );
-            console.log("Consoleeee", res);
-            // console.log(json);
-            // alert("Upload Completed");
-          }
-        }}
-        onUploadError={(error: Error) => {
-          // Do something with the error.
-          toast.error(`ERROR! ${error.message}`);
-        }}
-      />
+      {certificateCode !== "" && certificateName !== "" && (
+        <UploadButton<OurFileRouter>
+          endpoint="imageUploader"
+          className="bg-blue-100 py-4 ut-button:bg-white px-4 ut-allowed-content:text-sm ut-allowed-content:text-neutral-950 ut-button:shadow-effect ut-button:font-bold ut-button:px-6 ut-button:py-4 ut-button:w-full ut-button:border-[1px] ut-button:border-sold ut-button:border-blue-700 ut-button:text-blue-700 ut-button:disabled"
+          onClientUploadComplete={(res) => {
+            if (res) {
+              setImages(res);
+              const json = JSON.stringify(res);
+              // Do something with the response
+              toast.success(
+                "File Uploaded Successfully \n Complete the form and press submit!***"
+              );
+            }
+          }}
+          onUploadError={(error: Error) => {
+            // Do something with the error.
+            toast.error(`ERROR! ${error.message}`);
+          }}
+        />
+      )}
       <button
         type="submit"
         className="grid place-items-center bg-blue-500 text-white text-md px-8 h-12 w-full disabled:bg-blue-900"

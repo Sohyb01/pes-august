@@ -5,7 +5,30 @@ import UploadCertificateForm from "../Components/UploadCertificateForm";
 async function Dashboard() {
   const ApplicationData = await prisma.applicationData.findMany({});
   const CertificateData = await prisma.certificate.findMany({});
-  //   console.log(ApplicationData);
+
+  // Server action to delete a certificate from database
+  const removeCertificate = async (certificateCode: string) => {
+    await prisma.certificate.delete({
+      where: {
+        id: certificateCode,
+      },
+    });
+  };
+
+  // Function to turn dates into better format
+  const improveDateFormat = (longDate: string) => {
+    // Parse the input string into a Date object
+    const datetime = new Date(longDate);
+
+    // Get the month, date, and year components
+    const month = datetime.toLocaleString("en-US", { month: "short" });
+    const date = datetime.getDate();
+    const year = datetime.getFullYear();
+    // Format the date components into the desired format
+    const formattedDate = `${month} ${date} ${year}`;
+
+    return formattedDate;
+  };
 
   return (
     <div className="flex flex-col items-center w-full min-h-[100vh] pt-[144px] ">
@@ -18,6 +41,7 @@ async function Dashboard() {
               <table className="table table-xs table-pin-rows table-pin-cols bg-white scroll-styling">
                 <thead>
                   <tr className="flex gap-2 bg-white">
+                    <td>Application Date</td>
                     <td>Parent Email</td>
                     <td>Parent Mobile #</td>
                     <td>Student Name</td>
@@ -25,13 +49,15 @@ async function Dashboard() {
                     <td>Student Gender</td>
                     <td>Student Mobile #</td>
                     <td>Student has Laptop/PC?</td>
-                    <td>Date Submitted</td>
                   </tr>
                 </thead>
                 <tbody>
                   {ApplicationData.map((application, key) => {
                     return (
                       <tr key={key} className="flex gap-2 bg-white">
+                        <td>
+                          {improveDateFormat(application.createdAt.toString())}
+                        </td>
                         <td>{application.parentEmail}</td>
                         <td>{application.parentMobile}</td>
                         <td>{application.studentName}</td>
@@ -39,7 +65,6 @@ async function Dashboard() {
                         <td>{application.studentGender}</td>
                         <td>{application.studentMobile}</td>
                         <td>{application.studentHasLaptop}</td>
-                        <td>{application.createdAt.toString()}</td>
                       </tr>
                     );
                   })}
@@ -76,6 +101,13 @@ async function Dashboard() {
                           >
                             View Certificate
                           </a>
+                        </td>
+                        <td className="hidden">
+                          <form className="text-red-500">
+                            <button type="submit" className="underline">
+                              Delete Certificate
+                            </button>
+                          </form>
                         </td>
                       </tr>
                     );

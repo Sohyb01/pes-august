@@ -1,13 +1,13 @@
 "use client";
 
 import { revalidatePath } from "next/cache";
-import { addApplicationToDatabase } from "../actions/add-application-data";
-import { applicationFormSchema } from "../lib/types";
+import { studentApplicationFormSchema } from "../lib/types";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { redirect } from "next/navigation";
+import { addStudentApplicationToDatabase } from "../actions/add-student-application-data copy";
 
-function ApplicationForm() {
+function ParentApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const clientAction = async (formData: FormData) => {
     setIsSubmitting(true);
@@ -20,17 +20,17 @@ function ApplicationForm() {
         formData.get("studentName") !== ""
           ? formData.get("studentName")
           : undefined,
-      studentAge:
-        formData.get("studentAge") !== ""
-          ? parseInt(formData.get("studentAge") as string)
+      studentUniversity:
+        formData.get("studentUniversity") !== ""
+          ? formData.get("studentUniversity")
           : undefined,
-      parentEmail:
-        formData.get("parentEmail") !== ""
-          ? formData.get("parentEmail")
+      studentFaculty:
+        formData.get("studentFaculty") !== ""
+          ? formData.get("studentFaculty")
           : undefined,
-      parentMobile:
-        formData.get("parentMobile") !== ""
-          ? formData.get("parentMobile")
+      studentAcademicYear:
+        formData.get("studentAcademicYear") !== ""
+          ? formData.get("studentAcademicYear")
           : undefined,
       studentEmail:
         formData.get("studentEmail") !== ""
@@ -38,20 +38,16 @@ function ApplicationForm() {
           : null,
       studentMobile:
         formData.get("studentMobile") !== ""
-          ? formData.get("studentMobile")
+          ? formData.get("studentMobile")?.toString()
           : null,
-      studentGender:
-        formData.get("studentGender") !== null
-          ? formData.get("studentGender")
-          : undefined,
-      studentHasLaptop:
-        formData.get("studentHasLaptop") !== null
-          ? formData.get("studentHasLaptop")
+      studentAdditionalMessage:
+        formData.get("studentAdditionalMessage") !== null
+          ? formData.get("studentAdditionalMessage")
           : undefined,
     };
 
     // client-side validation
-    const result = applicationFormSchema.safeParse(applicationData);
+    const result = studentApplicationFormSchema.safeParse(applicationData);
     // In case of error
     if (!result.success) {
       let errorMessage = "Please fill out all required fields \n \n";
@@ -64,7 +60,7 @@ function ApplicationForm() {
       return;
     }
 
-    await addApplicationToDatabase(result.data).then((res) => {
+    await addStudentApplicationToDatabase(result.data).then((res) => {
       setTimeout(() => {
         setIsSubmitting(false);
         toast.success("Your application has been submitted successfully!");
@@ -77,12 +73,13 @@ function ApplicationForm() {
   return (
     <form
       action={clientAction}
-      className="bg-white rounded-[3px] shadow-effect flex flex-col gap-16 px-4 md:px-8 py-10 max-w-[704px] items-center"
+      className="bg-white rounded-[3px] shadow-effect w-full flex flex-col gap-16 px-4 md:px-8 py-10 items-center"
     >
       {/* Top Text */}
-      <p className="text-blue-900 font-bold text-md text-center">
-        After submitting, we will contact you through Whatsapp or a phone call,
-        then you can enroll into our courses
+      <p className="text-blue-900 text-sm text-start">
+        - Fields marked with * are required <br />
+        -After submitting, we will review your form and contact you for
+        enrolment
       </p>
       {/* Inputs container */}
       <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-5 md:gap-6 md:flex-row md:flex-wrap items-center text-start w-full">
@@ -90,136 +87,97 @@ function ApplicationForm() {
         <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
           {/* Label */}
           <p className="text-blue-700 text-start w-full">
-            Student Name in English (رباعي){" "}
-            <span className="text-red-600">*</span>
+            Name in English (رباعي) <span className="text-red-600">*</span>
           </p>
           <input
+            required
             type="text"
             name="studentName"
             id=""
             className="input-field text-sm"
           />
         </div>
-        {/* Student Age Input and Label container */}
+        {/* University Input and Label container */}
         <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
           {/* Label */}
           <p className="text-blue-700 text-start w-full">
-            Student Age <span className="text-red-600">*</span>
+            University <span className="text-red-600">*</span>
           </p>
           <input
-            type="number"
-            name="studentAge"
-            id=""
-            className="input-field text-sm"
-          />
-        </div>
-        {/* Parent Email Input and Label container */}
-        <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
-          {/* Label */}
-          <p className="text-blue-700 text-start w-full">
-            Parent email <span className="text-red-600">*</span>
-          </p>
-          <input
+            required
             type="text"
-            name="parentEmail"
+            name="studentUniversity"
             id=""
             className="input-field text-sm"
           />
         </div>
-        {/* Parent Mobile Input and Label container */}
+        {/* Faculty Input and Label container */}
         <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
           {/* Label */}
           <p className="text-blue-700 text-start w-full">
-            Parent mobile number (with Whatsapp){" "}
+            Faculty <span className="text-red-600">*</span>
+          </p>
+          <input
+            required
+            type="text"
+            name="studentFaculty"
+            id=""
+            className="input-field text-sm"
+          />
+        </div>
+        {/* Academic Year Input and Label container */}
+        <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
+          {/* Label */}
+          <p className="text-blue-700 text-start w-full">
+            Academic Year
             <span className="text-red-600">*</span>
           </p>
           <input
+            required
             type="text"
-            name="parentMobile"
+            name="studentAcademicYear"
             id=""
             className="input-field text-sm"
           />
         </div>
-        {/* Student Email Input and Label container */}
+        {/* Email Input and Label container */}
         <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
           {/* Label */}
-          <p className="text-blue-700 text-start w-full">Student email</p>
+          <p className="text-blue-700 text-start w-full">
+            Email Address <span className="text-red-600">*</span>
+          </p>
           <input
+            required
             type="text"
             name="studentEmail"
             id=""
             className="input-field text-sm"
           />
         </div>
-        {/* Student Mobile Number Input and Label container */}
+        {/* Mobile Number Input and Label container */}
         <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
           {/* Label */}
           <p className="text-blue-700 text-start w-full">
-            Student mobile number
+            Mobile Number <span className="text-red-600">*</span>
           </p>
           <input
+            required
             type="text"
             name="studentMobile"
             id=""
             className="input-field text-sm"
           />
         </div>
-        {/* Student Gender Input and Label container */}
-        <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
+        {/* Additional Message Input and Label container */}
+        <div className="flex flex-col items-start gap-2 w-full h-full justify-end col-span-2">
           {/* Label */}
-
           <p className="text-blue-700 text-start w-full">
-            Student Gender <span className="text-red-600">*</span>
+            Additional Message (Optional)
           </p>
-          <div className="flex gap-8">
-            <div className="flex gap-2 items-center">
-              <input
-                type="radio"
-                name="studentGender"
-                value="Boy"
-                className="radio border-neutral-400 border-[1px] border-solid"
-              />
-              <p className="text-blue-900">Boy</p>
-            </div>
-            <div className="flex gap-2 items-center">
-              <input
-                type="radio"
-                name="studentGender"
-                value="Girl"
-                className="radio border-neutral-400 border-[1px] border-solid"
-              />
-              <p className="text-blue-900">Girl</p>
-            </div>
-          </div>
-        </div>
-        {/* Student Has Laptop Input and Label container */}
-        <div className="flex flex-col items-start gap-2 w-full md:max-w-[304px] h-full justify-end">
-          {/* Label */}
-
-          <p className="text-blue-700 text-start w-full">
-            Does the student have a laptop/desktop?{" "}
-            <span className="text-red-600">*</span>
-          </p>
-          <div className="flex gap-8">
-            <div className="flex gap-2 items-center">
-              <input
-                type="radio"
-                name="studentHasLaptop"
-                value="Yes"
-                className="radio border-neutral-400 border-[1px] border-solid"
-              />
-              <p className="text-blue-900">Yes</p>
-            </div>
-            <div className="flex gap-2 items-center">
-              <input
-                type="radio"
-                name="studentHasLaptop"
-                value="No"
-                className="radio border-neutral-400 border-[1px] border-solid"
-              />
-              <p className="text-blue-900">No</p>
-            </div>
-          </div>
+          <textarea
+            name="studentAdditionalMessage"
+            className="text-sm resize-none p-2 w-full rounded-[3px] px-4 h-40 bg-white border-neutral-300 border-[1px] border-solid text-neutral-800 focus:outline-none  placeholder:text-neutral-500"
+          />
         </div>
       </div>
       {/* Submit Button Container */}
@@ -238,4 +196,4 @@ function ApplicationForm() {
   );
 }
 
-export default ApplicationForm;
+export default ParentApplicationForm;

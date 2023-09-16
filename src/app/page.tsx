@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FaqForm from "./Components/FaqForm";
 
 export default function Home() {
   return (
@@ -6,13 +7,14 @@ export default function Home() {
     <div className="flex flex-col items-center w-full">
       {/* Hero Section */}
       <section className="flex pb-[72px] section__styles relative flex-col items-center w-full">
-        <div className="hero-section-content pt-[144px] flex flex-col items-center gap-20 max-w-[656px] z-10">
+        <div className="hero-section-content pt-[144px] flex flex-col items-center gap-20 max-w-[672px] lg:max-w-[702px] z-10">
           {/* Header, subtext, & Buttons */}
           <div className="flex flex-col items-center gap-8">
             {/* Header and subtext */}
             <div className="flex flex-col items-center gap-4">
-              <h1 className="heading font-semibold text-4xl md:text-5xl text-center text-blue-700">
-                Give your children a brighter future
+              <h1 className="heading font-semibold text-3xl md:text-5xl text-center text-blue-700">
+                Learn <span className="text-orange-600 heading">in-demand</span>{" "}
+                skills & become accredited
               </h1>
               <p className="text-blue-900 text-center text-lg">
                 We set our students up for success in a technology-driven future
@@ -23,10 +25,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <a
                 target="_blank"
-                href="https://wa.me/201285488199"
+                href="/get-started"
                 className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
               >
-                Join a course
+                Get Started
               </a>
               {/* Hidden for now! */}
               <button className="bg-white hover:bg-blue-100 duration-100 text-center place-items-center px-6 py-3 w-[160px] text-blue-900 font-bold shadow-effect hidden gridd">
@@ -75,7 +77,7 @@ export default function Home() {
         <div className="hidden md:block absolute w-full max-w-[768px] lg:max-w-[1080px] h-full">
           {/* Graphics */}
           <svg
-            className="absolute top-[100px] left-[52px] lg:top-[144px] lg:left-[128px]"
+            className="absolute top-[110px] left-[72px] lg:left-[238px] lg:top-[104px]"
             xmlns="http://www.w3.org/2000/svg"
             width="72"
             height="87"
@@ -126,9 +128,37 @@ export default function Home() {
               fill="#C7D2FE"
             />
           </svg>
-          <div className="graphic-img-1 bg-cover absolute bg-center w-[108px] lg:w-[144px] top-[380px] left-5 lg:top-[407px] lg:left-10 aspect-[108/169.51]"></div>
-          <div className="graphic-img-2 bg-cover top-[380px] right-5 lg:top-[144px] lg:right-10 absolute bg-center w-[108px] lg:w-[144px]  aspect-[108/142.88]"></div>
+          <div className="graphic-img-1 bg-cover absolute bg-center w-[108px] lg:w-[144px] top-[480px] left-5 lg:top-[407px] lg:left-10 aspect-[108/169.51]"></div>
+          <div className="graphic-img-2 bg-cover top-[220px] right-5 lg:top-[144px] lg:right-10 absolute bg-center w-[108px] lg:w-[144px]  aspect-[108/142.88]"></div>
           <div className="graphic-img-3 bg-cover hidden lg:block absolute bg-center w-[144px] h-[216.99px] bottom-0 right-10"></div>
+        </div>
+      </section>
+      {/* Partners section */}
+      <section className="flex flex-col w-full my-[72px] section__styles gap-8">
+        <div className="flex flex-col items-center gap-2">
+          <p className="tagline">OUR EXPERIENCE</p>
+          <h1 className="text-2xl font-semibold text-blue-700 text-center">
+            Some of our partners & clients
+          </h1>
+        </div>
+        {/* Clients container */}
+        <div className="flex flex-wrap items-center justify-center w-full gap-4 md:gap-8">
+          {/* individual client */}
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+            <div className="partner-1 partner-img"></div>
+          </div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+            <div className="partner-2 partner-img"></div>
+          </div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+            <div className="partner-3 partner-img"></div>
+          </div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+            <div className="partner-4 partner-img"></div>
+          </div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+            <div className="partner-5 partner-img"></div>
+          </div>
         </div>
       </section>
       {/* Statistics Section */}
@@ -196,10 +226,10 @@ export default function Home() {
           {/* CTA Button */}
           <a
             target="_blank"
-            href="https://wa.me/201285488199"
+            href="/get-started"
             className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
           >
-            View courses
+            Get Started
           </a>
         </div>
       </div>
@@ -208,11 +238,13 @@ export default function Home() {
         className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
         id="testimonials"
       >
-        <h1 className="text-2xl font-semibold text-blue-700">
-          What others say
-        </h1>
+        {/* Tagline & Header */}
+        <div className="flex flex-col items-center gap-2">
+          <p className="tagline">WHAT OTHERS SAY</p>
+          <h1 className="text-2xl font-semibold text-blue-700">Testimonials</h1>
+        </div>
         {/* Testimonials and CTA */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:items-end">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 lg:items-end">
           {/* Testimonials Container */}
           <div className="flex flex-col items-center shadow-effect rounded-[3px] overflow-scroll scroll-styling max-h-[736px] lg:max-h-[636px] testimonials-container">
             {/* Individual Testimonials*/}
@@ -779,13 +811,13 @@ export default function Home() {
               <div className="absolute bg-cover bg-center testimonial-img h-[333px] w-[294px] left-[52px]"></div>
             </div>
             <div className="flex flex-col items-center bg-white shadow-effect gap-4 w-full p-6 ">
-              <p className="text-md text-blue-700 text-center">
-                Are you a happy student or parent?
+              <p className="text-lg text-blue-900 text-center">
+                Are you a happy client of ours?
               </p>
               <a
                 target="_blank"
                 href="https://wa.me/201285488199"
-                className="bg-blue-700 text-md hover:bg-blue-500 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+                className="bg-blue-700 text-md w-full hover:bg-blue-500 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
               >
                 Leave a Testimonial
               </a>
@@ -813,10 +845,10 @@ export default function Home() {
             <p className="text-lg text-white z-20">Learn at Centre</p>
             <a
               target="_blank"
-              href="https://wa.me/201285488199"
+              href="/get-started"
               className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
             >
-              Join a course
+              Get Started
             </a>
           </div>
           {/* Frame */}
@@ -833,10 +865,14 @@ export default function Home() {
         className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
         id="faq"
       >
-        <h1 className="text-blue-700 font-semibold text-2xl">
-          Your questions, answered
-        </h1>
-        <div className="flex flex-col lg:flex-row-reverse items-start w-full gap-8">
+        {/* Tagline & Header */}
+        <div className="flex flex-col items-center gap-2">
+          <p className="tagline">MORE INFORMATION</p>
+          <h1 className="text-2xl font-semibold text-blue-700">
+            Frequently Asked Questions
+          </h1>
+        </div>
+        <div className="flex flex-col lg:flex-row-reverse items-start w-full gap-8 lg:gap-20">
           <div className="join join-vertical w-full rounded-[0px] text-md">
             <div className="collapse collapse-arrow join-item shadow-effect bg-white">
               <input type="radio" name="my-accordion-4" />
@@ -1021,16 +1057,28 @@ export default function Home() {
               <div className="absolute bg-cover bg-center faq-img h-[333px] w-[329px] left-[52px]"></div>
             </div>
             <div className="flex flex-col items-center bg-white shadow-effect gap-4 w-full p-6 ">
-              <p className="text-md text-blue-700 text-center">
+              <p className="text-lg text-blue-900 text-start w-full">
                 Have another question?
               </p>
-              <a
-                target="_blank"
-                href="https://wa.me/201285488199"
-                className="bg-orange-600 hover:bg-orange-400 w-fit duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect text-md"
-              >
-                Contact us
-              </a>
+              <FaqForm></FaqForm>
+              <div className="text-blue-900 w-full mt-4">
+                <a
+                  target="_blank"
+                  href="https://wa.me/201285488199"
+                  className="text-blue-700 underline font-bold flex items-center gap-2"
+                >
+                  Or message us directly
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    className="fill-blue-700"
+                  >
+                    <path d="M20.4054 3.4875C18.1607 1.2375 15.1714 0 11.9946 0C5.4375 0 0.101786 5.33571 0.101786 11.8929C0.101786 13.9875 0.648214 16.0339 1.6875 17.8393L0 24L6.30536 22.3446C8.04107 23.2929 9.99643 23.7911 11.9893 23.7911H11.9946C18.5464 23.7911 24 18.4554 24 11.8982C24 8.72143 22.65 5.7375 20.4054 3.4875V3.4875ZM11.9946 21.7875C10.2161 21.7875 8.475 21.3107 6.95893 20.4107L6.6 20.1964L2.86071 21.1768L3.85714 17.5286L3.62143 17.1536C2.63036 15.5786 2.11071 13.7625 2.11071 11.8929C2.11071 6.44464 6.54643 2.00893 12 2.00893C14.6411 2.00893 17.1214 3.0375 18.9857 4.90714C20.85 6.77679 21.9964 9.25714 21.9911 11.8982C21.9911 17.3518 17.4429 21.7875 11.9946 21.7875V21.7875ZM17.4161 14.3839C17.1214 14.2339 15.6589 13.5161 15.3857 13.4196C15.1125 13.3179 14.9143 13.2696 14.7161 13.5696C14.5179 13.8696 13.95 14.5339 13.7732 14.7375C13.6018 14.9357 13.425 14.9625 13.1304 14.8125C11.3839 13.9393 10.2375 13.2536 9.08571 11.2768C8.78036 10.7518 9.39107 10.7893 9.95893 9.65357C10.0554 9.45536 10.0071 9.28393 9.93214 9.13393C9.85714 8.98393 9.2625 7.52143 9.01607 6.92679C8.775 6.34821 8.52857 6.42857 8.34643 6.41786C8.175 6.40714 7.97679 6.40714 7.77857 6.40714C7.58036 6.40714 7.25893 6.48214 6.98571 6.77679C6.7125 7.07679 5.94643 7.79464 5.94643 9.25714C5.94643 10.7196 7.0125 12.1339 7.15714 12.3321C7.30714 12.5304 9.25179 15.5304 12.2357 16.8214C14.1214 17.6357 14.8607 17.7054 15.8036 17.5661C16.3768 17.4804 17.5607 16.8482 17.8071 16.1518C18.0536 15.4554 18.0536 14.8607 17.9786 14.7375C17.9089 14.6036 17.7107 14.5286 17.4161 14.3839Z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
