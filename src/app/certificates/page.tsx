@@ -1,9 +1,7 @@
 "use client";
 
 import { startTransition, useState } from "react";
-import FindCertificateForm from "../Components/FindCertificateForm";
 import { getCertificate } from "../actions/get-certificate";
-import prisma from "../lib/prisma";
 import Image from "next/image";
 import Link from "next/link";
 

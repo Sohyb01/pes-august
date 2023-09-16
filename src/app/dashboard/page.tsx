@@ -3,7 +3,7 @@ import prisma from "../lib/prisma";
 import UploadCertificateForm from "../Components/UploadCertificateForm";
 
 async function Dashboard() {
-  const ApplicationData = await prisma.applicationData.findMany({});
+  const parentApplicationData = await prisma.parentApplicationData.findMany({});
   const CertificateData = await prisma.certificate.findMany({});
 
   // Server action to delete a certificate from database
@@ -52,7 +52,7 @@ async function Dashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {ApplicationData.map((application, key) => {
+                  {parentApplicationData.map((application, key) => {
                     return (
                       <tr key={key} className="flex gap-2 bg-white">
                         <td>
