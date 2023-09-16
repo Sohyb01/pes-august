@@ -1,18 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { addFaqMessageToDatabase } from "../actions/add-question-data";
 import toast from "react-hot-toast";
 
 function FaqForm() {
+  const [isSubmitting, setIsSubmitting] = useState<false | true>(false);
+
   const clientAction = async (formdata: FormData) => {
+    setIsSubmitting(true);
+
     const faqQuestionData = {
       mobileNumber: formdata.get("mobileNumber") as string,
       message: formdata.get("message") as string,
     };
 
-    await addFaqMessageToDatabase(faqQuestionData).then((res) => {
-      toast.success("Your message has been sent!");
-    });
+    await addFaqMessageToDatabase(faqQuestionData);
+
+    toast.success("Your message has been sent!");
+    setTimeout(() => setIsSubmitting(false), 30000);
   };
 
   return (
@@ -34,7 +39,8 @@ function FaqForm() {
       ></textarea>
       <button
         type="submit"
-        className="bg-blue-700 text-md hover:bg-blue-500 w-full duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
+        disabled={isSubmitting}
+        className="bg-blue-700 text-md hover:bg-blue-500 disabled:bg-blue-950 disabled:hover:bg-blue-950 w-full duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect"
       >
         Send Message
       </button>

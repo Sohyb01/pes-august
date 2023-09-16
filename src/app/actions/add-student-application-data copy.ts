@@ -1,12 +1,10 @@
 "use server";
 
 import prisma from "@/app/lib/prisma";
-import { revalidatePath } from "next/cache";
 import {
   studentApplicationFormSchema,
   studentApplicationFormSchemaType,
 } from "../lib/types";
-import { redirect } from "next/navigation";
 
 export const addStudentApplicationToDatabase = async (
   formdata: studentApplicationFormSchemaType

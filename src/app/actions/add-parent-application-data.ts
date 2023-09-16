@@ -1,12 +1,10 @@
 "use server";
 
 import prisma from "@/app/lib/prisma";
-import { revalidatePath } from "next/cache";
 import {
   parentApplicationFormSchema,
   parentApplicationFormSchemaType,
 } from "../lib/types";
-import { redirect } from "next/navigation";
 
 export const addParentApplicationToDatabase = async (
   formdata: parentApplicationFormSchemaType

@@ -6,7 +6,7 @@ export default function Home() {
     // All sections container
     <div className="flex flex-col items-center w-full">
       {/* Hero Section */}
-      <section className="flex pb-[72px] section__styles relative flex-col items-center w-full">
+      <section className="flex pb-[72px] section__styles relative flex-col items-center w-full fancy-line-border">
         <div className="hero-section-content pt-[144px] flex flex-col items-center gap-20 max-w-[672px] lg:max-w-[702px] z-10">
           {/* Header, subtext, & Buttons */}
           <div className="flex flex-col items-center gap-8">
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </section>
       {/* Partners section */}
-      <section className="flex flex-col w-full my-[72px] section__styles gap-8">
+      <section className="flex flex-col w-full py-[72px] section__styles gap-8 fancy-line-border">
         <div className="flex flex-col items-center gap-2">
           <p className="tagline">OUR EXPERIENCE</p>
           <h1 className="text-2xl font-semibold text-blue-700 text-center">
@@ -162,7 +162,7 @@ export default function Home() {
         </div>
       </section>
       {/* Statistics Section */}
-      <section className="flex flex-col w-full my-[72px] px-4 sm:px-6 md:px-0 max-w-[480px] md:max-w-none">
+      <section className="flex flex-col w-full my-[72px] px-4 sm:px-6 md:px-0 max-w-[480px] md:max-w-none fancy-line-border">
         {/* Statistics container */}
         <div className="flex flex-wrap relative items-center justify-center gap-4 md:justify-between section__styles py-6 w-full bg-white md:bg-transparent shadow-md md:shadow-none">
           {/* Statistic */}
@@ -192,16 +192,16 @@ export default function Home() {
           </div>
           <div className="hidden w-[160px] lg:flex flex-col text-center items-center  md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
             <h1 className="text-3xl font-bold text-blue-700">2+</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900">
+            <p className="-mt-2 text-md font-semibold text-blue-900 w-full max-w-[11ch]">
               Years of Experience
             </p>
           </div>
           {/* Blue streak */}
-          <div className="hidden md:block absolute top-[88px] h-8 w-full max-w-[704px] lg:max-w-[1000px] bg-blue-600"></div>
+          <div className="hidden md:block absolute top-[88px] h-8 w-full max-w-[702px] lg:max-w-[998px] bg-blue-600"></div>
         </div>
       </section>
       {/* Learn modern section (filler section) */}
-      <div className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full">
+      <div className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full fancy-line-border">
         {/* Technologies container */}
         <div className="flex flex-wrap md:flex-nowrap lg:flex-wrap width-[308px] lg:w-[350px] sm:w-full justify-center gap-8">
           <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center microsoft"></div>
@@ -235,7 +235,7 @@ export default function Home() {
       </div>
       {/* Testimonials Section */}
       <div
-        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
+        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full fancy-line-border"
         id="testimonials"
       >
         {/* Tagline & Header */}
@@ -826,7 +826,7 @@ export default function Home() {
         </div>
       </div>
       {/* Frames section */}
-      <div className="flex flex-col section__styles items-center py-[72px] gap-10 w-full">
+      <div className="flex flex-col section__styles items-center py-[72px] gap-10 w-full fancy-line-border">
         {/* Header & title */}
         <div className="flex flex-col text-start items-center gap-4">
           <h1 className="text-blue-700 font-semibold text-2xl md:text-center">
@@ -862,7 +862,7 @@ export default function Home() {
       </div>
       {/* FAQ Section */}
       <div
-        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full"
+        className="flex flex-col section__styles items-center py-[72px] gap-8 w-full fancy-line-border"
         id="faq"
       >
         {/* Tagline & Header */}

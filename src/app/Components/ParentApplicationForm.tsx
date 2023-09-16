@@ -1,11 +1,10 @@
 "use client";
 
-import { revalidatePath } from "next/cache";
 import { addParentApplicationToDatabase } from "../actions/add-parent-application-data";
+import { redirectAction } from "../actions/redirect-action";
 import { parentApplicationFormSchema } from "../lib/types";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { redirect } from "next/navigation";
 
 function ParentApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,12 +63,11 @@ function ParentApplicationForm() {
       return;
     }
 
-    await addParentApplicationToDatabase(result.data).then((res) => {
-      setTimeout(() => {
-        setIsSubmitting(false);
-        toast.success("Your application has been submitted successfully!");
-      }, 2000);
-    });
+    await addParentApplicationToDatabase(result.data);
+
+    toast.success("Your application has been submitted successfully!");
+
+    await redirectAction("/");
 
     // output server error message
   };

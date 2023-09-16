@@ -1,11 +1,10 @@
 "use client";
 
-import { revalidatePath } from "next/cache";
 import { studentApplicationFormSchema } from "../lib/types";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { redirect } from "next/navigation";
 import { addStudentApplicationToDatabase } from "../actions/add-student-application-data copy";
+import { redirectAction } from "../actions/redirect-action";
 
 function ParentApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,9 +49,11 @@ function ParentApplicationForm() {
     const result = studentApplicationFormSchema.safeParse(applicationData);
     // In case of error
     if (!result.success) {
+      console.log("error");
       let errorMessage = "Please fill out all required fields \n \n";
 
       result.error.issues.forEach((issue) => {
+        console.log(issue.message);
         errorMessage = errorMessage + issue.message + ".\n";
       });
       //   Output toast message
@@ -60,12 +61,11 @@ function ParentApplicationForm() {
       return;
     }
 
-    await addStudentApplicationToDatabase(result.data).then((res) => {
-      setTimeout(() => {
-        setIsSubmitting(false);
-        toast.success("Your application has been submitted successfully!");
-      }, 2000);
-    });
+    await addStudentApplicationToDatabase(result.data);
+
+    toast.success("Your application has been submitted successfully!");
+
+    await redirectAction("/");
 
     // output server error message
   };

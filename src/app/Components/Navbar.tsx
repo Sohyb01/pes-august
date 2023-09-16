@@ -165,20 +165,20 @@ function Navbar() {
                   <path
                     d="M1 1H25"
                     stroke="#FAFAFA"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M1 9H25"
                     stroke="#FAFAFA"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M1 17H25"
                     stroke="#FAFAFA"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
                   />
                 </svg>
               </label>
