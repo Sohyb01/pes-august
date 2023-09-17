@@ -1,6 +1,5 @@
-import Image from "next/image";
 import FaqForm from "./Components/FaqForm";
-
+<link rel="icon" href="/favicon.ico" sizes="any" />;
 export default function Home() {
   return (
     // All sections container
@@ -144,62 +143,24 @@ export default function Home() {
         {/* Clients container */}
         <div className="flex flex-wrap items-center justify-center w-full gap-4 md:gap-8">
           {/* individual client */}
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
             <div className="partner-1 partner-img"></div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
             <div className="partner-2 partner-img"></div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
             <div className="partner-3 partner-img"></div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
             <div className="partner-4 partner-img"></div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[16px] w-[146px] sm:w-[133px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
             <div className="partner-5 partner-img"></div>
           </div>
         </div>
       </section>
-      {/* Statistics Section */}
-      <section className="flex flex-col w-full my-[72px] px-4 sm:px-6 md:px-0 max-w-[480px] md:max-w-none fancy-line-border">
-        {/* Statistics container */}
-        <div className="flex flex-wrap relative items-center justify-center gap-4 md:justify-between section__styles py-6 w-full bg-white md:bg-transparent shadow-md md:shadow-none">
-          {/* Statistic */}
-          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
-            <h1 className="text-3xl font-bold text-blue-700">850+</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900">
-              Students
-            </p>
-          </div>
-          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
-            <h1 className="text-3xl font-bold text-blue-700">1.7k</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900">
-              Hours of Support
-            </p>
-          </div>
-          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
-            <h1 className="text-3xl font-bold text-blue-700">8</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900">
-              Chief Experts
-            </p>
-          </div>
-          <div className="w-[160px] flex flex-col text-center items-center md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
-            <h1 className="text-3xl font-bold text-blue-700">139</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900">
-              Projects
-            </p>
-          </div>
-          <div className="hidden w-[160px] lg:flex flex-col text-center items-center  md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
-            <h1 className="text-3xl font-bold text-blue-700">2+</h1>
-            <p className="-mt-2 text-md font-semibold text-blue-900 w-full max-w-[11ch]">
-              Years of Experience
-            </p>
-          </div>
-          {/* Blue streak */}
-          <div className="hidden md:block absolute top-[88px] h-8 w-full max-w-[702px] lg:max-w-[998px] bg-blue-600"></div>
-        </div>
-      </section>
+
       {/* Learn modern section (filler section) */}
       <div className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full fancy-line-border">
         {/* Technologies container */}
@@ -825,6 +786,38 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Statistics Section */}
+      <section className="grid grid-cols-2 grid-rows-2 md:flex relative items-center gap-4 md:justify-between section__styles py-[72px] w-full">
+        {/* Statistic */}
+        <div className="md:w-[160px] aspect-square flex flex-col text-center items-center md:h-[160px] bg-white shadow-effect md:border-[1px] justify-center z-[1]">
+          <h1 className="text-3xl font-bold text-blue-700">850+</h1>
+          <p className="-mt-2 text-md font-semibold text-blue-900">Students</p>
+        </div>
+        <div className="md:w-[160px] aspect-square flex flex-col text-center items-center md:h-[160px] bg-white shadow-effect md:border-[1px] justify-center z-[1]">
+          <h1 className="text-3xl font-bold text-blue-700">1.7k</h1>
+          <p className="-mt-2 text-md font-semibold text-blue-900">
+            Hours of Support
+          </p>
+        </div>
+        <div className="md:w-[160px] aspect-square flex flex-col text-center items-center md:h-[160px] bg-white shadow-effect md:border-[1px] justify-center z-[1]">
+          <h1 className="text-3xl font-bold text-blue-700">8</h1>
+          <p className="-mt-2 text-md font-semibold text-blue-900">
+            Chief Experts
+          </p>
+        </div>
+        <div className="md:w-[160px] aspect-square flex flex-col text-center items-center md:h-[160px] bg-white shadow-effect md:border-[1px] justify-center z-[1]">
+          <h1 className="text-3xl font-bold text-blue-700">139</h1>
+          <p className="-mt-2 text-md font-semibold text-blue-900">Projects</p>
+        </div>
+        <div className="hidden w-[160px] lg:flex flex-col text-center items-center  md:h-[160px] md:bg-white md:shadow-xl md:border-[1px] justify-center z-[1]">
+          <h1 className="text-3xl font-bold text-blue-700">2+</h1>
+          <p className="-mt-2 text-md font-semibold text-blue-900 w-full max-w-[11ch]">
+            Years of Experience
+          </p>
+        </div>
+        {/* Blue streak */}
+        <div className="hidden md:block absolute top-[136px] h-8 w-full max-w-[702px] lg:max-w-[998px] bg-blue-600"></div>
+      </section>
       {/* Frames section */}
       <div className="flex flex-col section__styles items-center py-[72px] gap-10 w-full fancy-line-border">
         {/* Header & title */}

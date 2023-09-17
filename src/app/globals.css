@@ -114,7 +114,7 @@ td, tr, th, tbody, thead {
 }
 
 td {
-  @apply w-[200px]
+  @apply w-[200px] h-[60px]
 }
 tr {
   @apply py-2
