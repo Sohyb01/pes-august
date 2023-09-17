@@ -38,9 +38,6 @@ body {
   leading-[120%]
 }
 
-.nav-logo{
-  background-image: url(./images/logo-white-2.png);
-}
 
 .hero-video{
   background-image: url(./images/video-image-small-min.png);
@@ -70,18 +67,7 @@ body {
   background-image: url(./images/hero-graphic-3.png);
 }
 
-.microsoft{
-  background-image: url(./images/microsoft.png);
-}
-.python{
-  background-image: url(./images/python.png);
-}
-.scratch{
-  background-image: url(./images/scratch.png);
-}
-.arduino{
-  background-image: url(./images/arduino.png);
-}
+
 
 .testimonials-container:nth-child(odd){
  @apply bg-neutral-200
@@ -124,20 +110,5 @@ tr {
 }
 
 .partner-img{
-  @apply bg-contain bg-center w-full h-full bg-no-repeat
-}
-.partner-1{
-  background-image: url(./images/Partners/client1-min.png);
-}
-.partner-2{
-  background-image: url(./images/Partners/client2-min.png);
-}
-.partner-3{
-  background-image: url(./images/Partners/client3-min.png);
-}
-.partner-4{
-  background-image: url(./images/Partners/client4-min.png);
-}
-.partner-5{
-  background-image: url(./images/Partners/client5-min.png);
+  @apply bg-cover bg-center w-full h-full bg-no-repeat grid place-items-center
 }

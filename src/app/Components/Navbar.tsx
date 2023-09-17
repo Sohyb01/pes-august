@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,13 +8,18 @@ function Navbar() {
       <div className="section__styles mx-auto flex justify-between">
         {/* Logo */}
         <Link href="/">
-          <div className="nav-logo w-[124px] h-[52px] bg-cover"></div>
+          <div className="nav-logo w-[124px] h-[52px] relative">
+            <Image src="/logo-white-2.png" fill alt="PES Logo" />
+          </div>
         </Link>
         {/* Links & buttons container */}
         <div className="items-center gap-8 nav-styling">
           {/* Home dropdown */}
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className=" flex items-center gap-[6px]">
+            <label
+              tabIndex={0}
+              className=" flex items-center gap-[6px] hover:text-blue-100 duration-100"
+            >
               About
               <svg
                 className="fill-white w-3"
@@ -65,7 +71,10 @@ function Navbar() {
           </div>
           {/* Contact dropdown */}
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className=" flex items-center gap-[6px]">
+            <label
+              tabIndex={0}
+              className=" flex items-center gap-[6px] hover:text-blue-100 duration-100"
+            >
               Contact
               <svg
                 className="fill-white w-3"
@@ -105,7 +114,10 @@ function Navbar() {
           </div>
           {/* Students dropdown */}
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className=" flex items-center gap-[6px]">
+            <label
+              tabIndex={0}
+              className="flex items-center gap-[6px] hover:text-blue-100 duration-100"
+            >
               For Students
               <svg
                 className="fill-white w-3"

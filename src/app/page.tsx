@@ -1,5 +1,6 @@
 import FaqForm from "./Components/FaqForm";
-<link rel="icon" href="/favicon.ico" sizes="any" />;
+import Image from "next/image";
+
 export default function Home() {
   return (
     // All sections container
@@ -143,20 +144,60 @@ export default function Home() {
         {/* Clients container */}
         <div className="flex flex-wrap items-center justify-center w-full gap-4 md:gap-8">
           {/* individual client */}
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
-            <div className="partner-1 partner-img"></div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
+            <div className="partner-img">
+              <div className="relative aspect-[168/173] h-full">
+                <Image
+                  src="/partners/client1-min.png"
+                  alt="Ministry of youth and sports"
+                  fill
+                />
+              </div>
+            </div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
-            <div className="partner-2 partner-img"></div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
+            <div className="partner-img">
+              <div className="relative aspect-[172/172] h-full">
+                <Image
+                  src="/partners/client2-min.png"
+                  alt="Ministry of youth and sports"
+                  fill
+                />
+              </div>
+            </div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
-            <div className="partner-3 partner-img"></div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
+            <div className="partner-img">
+              <div className="relative aspect-[204/181] h-full">
+                <Image
+                  src="/partners/client3-min.png"
+                  alt="Ministry of youth and sports"
+                  fill
+                />
+              </div>
+            </div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
-            <div className="partner-4 partner-img"></div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
+            <div className="partner-img">
+              <div className="relative aspect-[177/182] h-full">
+                <Image
+                  src="/partners/client4-min.png"
+                  alt="Ministry of youth and sports"
+                  fill
+                />
+              </div>
+            </div>
           </div>
-          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] sm:w-[208px] md:w-[213px] lg:w-[226px] aspect-[226/170]">
-            <div className="partner-5 partner-img"></div>
+          <div className="grid place-items-center p-4 bg-white shadow-effect rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
+            <div className="partner-img">
+              <div className="relative aspect-[1410/736] w-full">
+                <Image
+                  src="/partners/client5-min.png"
+                  alt="Ministry of youth and sports"
+                  fill
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -165,10 +206,18 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full fancy-line-border">
         {/* Technologies container */}
         <div className="flex flex-wrap md:flex-nowrap lg:flex-wrap width-[308px] lg:w-[350px] sm:w-full justify-center gap-8">
-          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center microsoft"></div>
-          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center python"></div>
-          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center scratch"></div>
-          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center arduino"></div>
+          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
+            <Image src="/microsoft.png" fill alt="Microsoft" />
+          </div>
+          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
+            <Image src="/python.png" fill alt="Python" />
+          </div>
+          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
+            <Image src="/scratch.png" fill alt="Scratch" />
+          </div>
+          <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
+            <Image src="/arduino.png" fill alt="Arduino" />
+          </div>
         </div>
         {/* Header, subtext, button */}
         <div className="flex flex-col items-center lg:items-start gap-8 w-full lg:w-[570px]">
