@@ -1,7 +1,7 @@
 "use client";
 
 import { startTransition, useState } from "react";
-import { getCertificate } from "../actions/get-certificate";
+import { getCertificate } from "../../actions/get-certificate";
 import Image from "next/image";
 import Link from "next/link";
 

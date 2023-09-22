@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import ParentApplicationForm from "../Components/ParentApplicationForm";
-import StudentApplicationForm from "../Components/StudentApplicationForm";
+import ParentApplicationForm from "../../Components/ParentApplicationForm";
+import StudentApplicationForm from "../../Components/StudentApplicationForm";
 
 function GetStartedPage() {
   const [signUpOption, setSignUpOption] = useState<signUpOptions>(null);

@@ -1,62 +1,164 @@
 import { z } from "zod";
 
-export const parentApplicationFormSchema = z.object({
-  studentName: z
-    .string({ required_error: "Student Name is Required" })
+export const PESKidsFormSchema = z.object({
+  DesiredCourse: z
+    .string({ required_error: "Required" })
+    .nonempty("Please select an option"),
+  //
+  ParentMobile: z
+    .string({ required_error: "Required" })
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number"),
+  ParentEmail: z
+    .string({ required_error: "Required" })
+    .email("Please enter a valid email address"),
+  //
+  StudentName: z
+    .string({ required_error: "Required" })
     .regex(/^[A-Za-z]+(\s[A-Za-z]+){3}$/, "Please enter a valid name (رباعي)"),
-  studentAge: z
+  StudentAge: z
     .number({
-      required_error: "Student Age is Required",
+      required_error: "Required",
+      invalid_type_error: "Please enter a valid number",
     })
     .int()
     .min(7, "Student must be at least 7 years old")
     .max(16, "Student cannot be older than 16"),
-  parentEmail: z
-    .string({ required_error: "Parent Email is Required" })
-    .email("Please enter a valid email address"),
-  parentMobile: z
-    .string({ required_error: "Parent Mobile Number Required" })
-    .regex(/^01\d{9}$/, "Please enter a valid Egyptian phone number"), //Matches Egptian phone numbers in the format 01X XXXX XXXX
-  studentEmail: z.union([
-    z.string().email("Please enter a valid email address"),
-    z.null(),
-  ]),
-  studentMobile: z.union([
-    z.string().regex(/^01\d{9}$/, "Please enter a valid Egyptian phone number"),
-    z.null(),
-  ]),
-  studentGender: z.enum(["Boy", "Girl"], {
-    required_error: "Please select a gender",
-  }),
-  studentHasLaptop: z.enum(["Yes", "No"], {
-    required_error: "Please confirm if the student has a laptop/desktop",
+  //
+  StudentMobile: z
+    .string()
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number")
+    .optional(),
+  StudentEmail: z
+    .string()
+    .email("Please enter a valid email address")
+    .optional()
+    .or(z.literal("")),
+  //
+  DesiredMethod: z.enum(["Online", "Offline"]).optional().nullable(),
+  StudentHasLaptop: z.string({
+    required_error: "Required",
+    invalid_type_error: "Please select an option",
   }),
 });
 
-export type parentApplicationFormSchemaType = z.infer<
-  typeof parentApplicationFormSchema
->;
+export type PESKidsFormDatatype = z.infer<typeof PESKidsFormSchema>;
 
-export const studentApplicationFormSchema = z.object({
-  studentName: z
-    .string({ required_error: "Student Name is Required" })
+export const PESYouthFormSchema = z.object({
+  DesiredCourse: z
+    .string({ required_error: "Required" })
+    .nonempty("Please select"),
+  //
+  StudentName: z
+    .string({ required_error: "Required" })
     .regex(/^[A-Za-z]+(\s[A-Za-z]+){3}$/, "Please enter a valid name (رباعي)"),
-  studentUniversity: z.string({
-    required_error: "University Name is Required",
-  }),
-  studentFaculty: z.string({ required_error: "Faculty Name is Required" }),
-  studentAcademicYear: z.string({
-    required_error: "Academic Year is Required",
-  }),
-  studentEmail: z
-    .string({ required_error: "Parent Email is Required" })
+  //
+  StudentAge: z
+    .number({
+      required_error: "Required",
+      invalid_type_error: "Please enter a valid number",
+    })
+    .int()
+    .min(17, "Student must be at least 17 years old"),
+  //
+  StudentMobile: z
+    .string({ required_error: "Required" })
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number"),
+  StudentEmail: z
+    .string({ required_error: "Required" })
     .email("Please enter a valid email address"),
-  studentMobile: z
-    .string({ required_error: "Mobile Number is Required" })
-    .regex(/^01\d{9}$/, "Please enter a valid Egyptian phone number"), //Matches Egptian phone numbers in the format 01X XXXX XXXX
-  studentAdditionalMessage: z.union([z.string(), z.null()]),
+  //
+  StudentUniversity: z
+    .string({ required_error: "Required" })
+    .nonempty("Required"),
+  StudentCollege: z.string({ required_error: "Required" }).nonempty("Required"),
+  //
+  StudentSpeciality: z.string().optional(),
+  StudentHasLaptop: z.string({
+    required_error: "Required",
+    invalid_type_error: "Please select an option",
+  }),
 });
 
-export type studentApplicationFormSchemaType = z.infer<
-  typeof studentApplicationFormSchema
+export type PESYouthFormDatatype = z.infer<typeof PESYouthFormSchema>;
+
+export const SchoolPartnershipFormSchema = z.object({
+  SchoolName: z.string({ required_error: "Required" }),
+  //
+  ApplierName: z
+    .string({ required_error: "Required" })
+    .regex(/^[A-Za-z]+(\s[A-Za-z]+){3}$/, "Please enter a valid name (رباعي)"),
+  ApplierMobile: z
+    .string({ required_error: "Required" })
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number"),
+  //
+  ApplierEmail: z
+    .string({ required_error: "Required" })
+    .email("Please enter a valid email address"),
+  ApplierRoleInSchool: z.string({ required_error: "Required" }),
+});
+
+export type SchoolPartnershipFormDatatype = z.infer<
+  typeof SchoolPartnershipFormSchema
 >;
+
+// FRANCHISE SCHEMA
+export const FranchiseFormSchema = z.object({
+  ApplierName: z
+    .string({ required_error: "Required" })
+    .regex(/^[A-Za-z]+(\s[A-Za-z]+){3}$/, "Please enter a valid name (رباعي)"),
+  ApplierMobile: z
+    .string({ required_error: "Required" })
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number"),
+  //
+  ApplierEmail: z
+    .string({ required_error: "Required" })
+    .email("Please enter a valid email address"),
+  ApplierLocation: z
+    .string({ required_error: "Required" })
+    .nonempty("Required"),
+  //
+  ApplierBudget: z.string({ required_error: "Required" }).nonempty("Required"),
+  DesiredFranchiseLocation: z
+    .string({ required_error: "Required" })
+    .nonempty("Required"),
+  //
+  ApplierProfession: z.string({ required_error: "Required" }).optional(),
+  ApplierHeardAboutUs: z.string({ required_error: "Required" }).optional(),
+  //
+  ApplierMotivation: z.string({ required_error: "Required" }).optional(),
+  //
+  ApplierAdditionalMessage: z.string({ required_error: "Required" }).optional(),
+});
+
+export type FranchiseFormDatatype = z.infer<typeof FranchiseFormSchema>;
+
+export const InstructorFormSchema = z.object({
+  ApplierName: z
+    .string({ required_error: "Required" })
+    .regex(/^[A-Za-z]+(\s[A-Za-z]+){3}$/, "Please enter a valid name (رباعي)"),
+  ApplierAge: z
+    .number({
+      required_error: "Required",
+      invalid_type_error: "Please enter a valid number",
+    })
+    .int({ message: "Please enter a valid number" })
+    .min(17, "must be at least 17 years old"),
+  //
+  ApplierGender: z.enum(["Male", "Female"], {
+    invalid_type_error: "Please select an option",
+  }),
+  ApplierMobile: z
+    .string({ required_error: "Required" })
+    .regex(/^(\+\d{1,3})?\d{9,15}$/, "Please enter a valid phone number"),
+  //
+  ApplierEmail: z
+    .string({ required_error: "Required" })
+    .email("Please enter a valid email address"),
+  //
+  ApplierExtraSocialMediaProfileLinks: z.string().optional(),
+  ApplierIsGraduated: z.string({ required_error: "Required" }),
+  //
+  DesiredInstructorRole: z.enum(["PES Kids", "PES Youth"]),
+});
+
+export type InstructorFormDatatype = z.infer<typeof InstructorFormSchema>;

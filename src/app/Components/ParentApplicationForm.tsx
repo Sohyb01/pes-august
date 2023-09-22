@@ -1,10 +1,7 @@
 "use client";
 
-import { addParentApplicationToDatabase } from "../actions/add-parent-application-data";
 import { redirectAction } from "../actions/redirect-action";
-import { parentApplicationFormSchema } from "../lib/types";
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 function ParentApplicationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,63 +10,6 @@ function ParentApplicationForm() {
     setTimeout(() => {
       setIsSubmitting(false);
     }, 2000);
-    // construct new object
-    const applicationData = {
-      studentName:
-        formData.get("studentName") !== ""
-          ? formData.get("studentName")
-          : undefined,
-      studentAge:
-        formData.get("studentAge") !== ""
-          ? parseInt(formData.get("studentAge") as string)
-          : undefined,
-      parentEmail:
-        formData.get("parentEmail") !== ""
-          ? formData.get("parentEmail")
-          : undefined,
-      parentMobile:
-        formData.get("parentMobile") !== ""
-          ? formData.get("parentMobile")
-          : undefined,
-      studentEmail:
-        formData.get("studentEmail") !== ""
-          ? formData.get("studentEmail")
-          : null,
-      studentMobile:
-        formData.get("studentMobile") !== ""
-          ? formData.get("studentMobile")
-          : null,
-      studentGender:
-        formData.get("studentGender") !== null
-          ? formData.get("studentGender")
-          : undefined,
-      studentHasLaptop:
-        formData.get("studentHasLaptop") !== null
-          ? formData.get("studentHasLaptop")
-          : undefined,
-    };
-
-    // client-side validation
-    const result = parentApplicationFormSchema.safeParse(applicationData);
-    // In case of error
-    if (!result.success) {
-      let errorMessage = "Please fill out all required fields \n \n";
-
-      result.error.issues.forEach((issue) => {
-        errorMessage = errorMessage + issue.message + ".\n";
-      });
-      //   Output toast message
-      toast.error(errorMessage);
-      return;
-    }
-
-    await addParentApplicationToDatabase(result.data);
-
-    toast.success("Your application has been submitted successfully!");
-
-    await redirectAction("/");
-
-    // output server error message
   };
 
   return (

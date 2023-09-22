@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
-import { Toaster } from "react-hot-toast";
 import { getServerSession } from "next-auth";
+import { ToastContainer } from "react-toastify";
 
 // import { SessionProvider } from "next-auth/react";
 
@@ -26,7 +26,7 @@ export default async function RootLayout({
         {/* <SessionProvider session={session}> */}
         <Navbar></Navbar>
         {children}
-        <Toaster position="bottom-right"></Toaster>
+        <ToastContainer />
         <Footer></Footer>
         {/* </SessionProvider> */}
       </body>

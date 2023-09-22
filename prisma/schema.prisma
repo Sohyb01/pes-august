@@ -16,41 +16,110 @@ model Certificate {
   imgUrl String
 }
 
-model QuestionData{
-  id Int @id @default(autoincrement())
-  mobileNumber String
-  message String
-}
-
-model ParentApplicationData {
+model pesKidsApplicationData {
+  // Default Fields
   applicationId Int @id @default(autoincrement())
   createdAt DateTime @default(now())
-  studentName String
-  studentAge Int
-  parentEmail String
-  parentMobile String
-  studentEmail String?
-  studentMobile String?
-  studentGender Gender
-  studentHasLaptop YesOrNo
+  // Data from form
+  DesiredCourse String
+  // 
+  ParentMobile String
+  ParentEmail String
+  // 
+  StudentName String
+  StudentAge Int
+  // 
+  StudentMobile String?
+  StudentEmail String?
+  // 
+  DesiredMethod String?
+  StudentHasLaptop String
 }
 
-model StudentApplicationData {
+model pesYouthApplicationData {
+  // Default Fields
   applicationId Int @id @default(autoincrement())
   createdAt DateTime @default(now())
-  studentName String
-  studentUniversity String
-  studentFaculty String
-  studentAcademicYear String
-  studentEmail String
-  studentMobile String
-  studentAdditionalMessage String?
+  // Data from form
+  DesiredCourse String
+  // 
+  StudentName String
+  StudentAge Int
+  // 
+  StudentMobile String
+  StudentEmail String
+  // 
+  StudentUniversity String
+  StudentCollege String
+  // 
+  StudentSpeciality String?
+  StudentHasLaptop String
+}
+
+model schoolPartnershipApplicationData {
+  // Default Fields
+  applicationId Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  // Data from form
+  SchoolName String
+  // 
+  ApplierName String
+  ApplierMobile String
+  // 
+  ApplierEmail String
+  ApplierRoleInSchool String
+  // DesiredEducationalStages String[]
+}
+
+model franchiseApplicationData {
+  // Default Fields
+  applicationId Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  // Data from form
+  ApplierName String
+  ApplierMobile String
+  // 
+  ApplierEmail String
+  ApplierLocation String
+  // 
+  ApplierBudget String
+  DesiredFranchiseLocation String
+  // 
+  ApplierProfession String?
+  ApplierHeardAboutUs String?
+  // 
+  ApplierMotivation String?
+  // 
+  ApplierAdditionalMessage String?
+}
+
+model instructorApplicationData {
+    // Default Fields
+  applicationId Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  // Data from form
+  ApplierName String
+  ApplierAge Int
+  // 
+  ApplierGender String
+  ApplierMobile String
+  // 
+  ApplierEmail String
+  ApplierExtraSocialMediaProfileLinks String?
+  // 
+  ApplierIsGraduated String
+  DesiredInstructorRole String
 }
 
 model User {
   email    String @unique
   password String
   role Role @default(USER)
+}
+
+enum OnlineOrOffline {
+  Online
+  Offline
 }
 
 enum Role {

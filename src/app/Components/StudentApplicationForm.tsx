@@ -1,9 +1,7 @@
 "use client";
 
-import { studentApplicationFormSchema } from "../lib/types";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { addStudentApplicationToDatabase } from "../actions/add-student-application-data copy";
 import { redirectAction } from "../actions/redirect-action";
 
 function ParentApplicationForm() {
@@ -13,61 +11,6 @@ function ParentApplicationForm() {
     setTimeout(() => {
       setIsSubmitting(false);
     }, 2000);
-    // construct new object
-    const applicationData = {
-      studentName:
-        formData.get("studentName") !== ""
-          ? formData.get("studentName")
-          : undefined,
-      studentUniversity:
-        formData.get("studentUniversity") !== ""
-          ? formData.get("studentUniversity")
-          : undefined,
-      studentFaculty:
-        formData.get("studentFaculty") !== ""
-          ? formData.get("studentFaculty")
-          : undefined,
-      studentAcademicYear:
-        formData.get("studentAcademicYear") !== ""
-          ? formData.get("studentAcademicYear")
-          : undefined,
-      studentEmail:
-        formData.get("studentEmail") !== ""
-          ? formData.get("studentEmail")
-          : null,
-      studentMobile:
-        formData.get("studentMobile") !== ""
-          ? formData.get("studentMobile")?.toString()
-          : null,
-      studentAdditionalMessage:
-        formData.get("studentAdditionalMessage") !== null
-          ? formData.get("studentAdditionalMessage")
-          : undefined,
-    };
-
-    // client-side validation
-    const result = studentApplicationFormSchema.safeParse(applicationData);
-    // In case of error
-    if (!result.success) {
-      console.log("error");
-      let errorMessage = "Please fill out all required fields \n \n";
-
-      result.error.issues.forEach((issue) => {
-        console.log(issue.message);
-        errorMessage = errorMessage + issue.message + ".\n";
-      });
-      //   Output toast message
-      toast.error(errorMessage);
-      return;
-    }
-
-    await addStudentApplicationToDatabase(result.data);
-
-    toast.success("Your application has been submitted successfully!");
-
-    await redirectAction("/");
-
-    // output server error message
   };
 
   return (
