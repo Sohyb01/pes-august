@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import FaqForm from "./Components/FaqForm";
 
 function Extrasections() {
   return (
@@ -832,7 +830,6 @@ function Extrasections() {
               <p className="text-lg text-blue-900 text-start w-full">
                 Have another question?
               </p>
-              <FaqForm></FaqForm>
               <div className="text-blue-900 w-full mt-4">
                 <a
                   target="_blank"
