@@ -3,9 +3,26 @@ import InstructorForm from "@/app/Components/Long Forms/InstructorForm";
 import PESKidsForm from "@/app/Components/Long Forms/PESKidsForm";
 import PESYouthForm from "@/app/Components/Long Forms/PESYouthForm";
 import SchoolPartnershipsForm from "@/app/Components/Long Forms/SchoolPartnershipsForm";
+import prisma from "@/app/lib/prisma";
 import React from "react";
 
-function FormsTestingPage() {
+async function FormsTestingPage() {
+  // Get available pes kids course options
+  const PESKidsCourseOptions = await prisma.pesKidsCourse.findMany({
+    select: {
+      courseName: true,
+      courseDuration: true,
+    },
+  });
+
+  // Get available pes kids course options
+  const PESYouthCourseOptions = await prisma.pesYouthCourse.findMany({
+    select: {
+      courseName: true,
+      courseDuration: true,
+    },
+  });
+
   return (
     <div className="flex flex-col items-center w-full min-h-[100vh] pt-[144px] ">
       {/* BASE FORM */}
@@ -100,14 +117,14 @@ function FormsTestingPage() {
         <h1 className="text-3xl text-blue-700 font-bold heading">
           PES Kids Application
         </h1>
-        <PESKidsForm></PESKidsForm>
+        <PESKidsForm data={PESKidsCourseOptions}></PESKidsForm>
       </section>
       {/* PES YOUTH Education FORM */}
       <section className="flex flex-col items-center w-full pb-[72px] section__styles gap-4 ">
         <h1 className="text-3xl text-blue-700 font-bold heading">
           PES Youth Application
         </h1>
-        <PESYouthForm></PESYouthForm>
+        <PESYouthForm data={PESYouthCourseOptions}></PESYouthForm>
       </section>
       {/* PES School Partnerships FORM */}
       <section className="flex flex-col items-center w-full pb-[72px] section__styles gap-4 ">

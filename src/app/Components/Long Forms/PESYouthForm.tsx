@@ -7,7 +7,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addPesYouthApplicationData_SA } from "@/app/actions/add-pes-youth-data";
 
-function PESYouthForm() {
+function PESYouthForm(props: {
+  data: {
+    courseName: string;
+    courseDuration: string;
+  }[];
+}) {
   const {
     register,
     handleSubmit,
@@ -82,9 +87,12 @@ function PESYouthForm() {
             })}
           >
             <option value="">Select a course</option>
-            {/* Later, get the PES Youth courses options from the database */}
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
+            {/* Get the PES Kids courses options from the database */}
+            {props.data.map((course, key) => (
+              <option key={key} value={course.courseName}>
+                {course.courseName}
+              </option>
+            ))}
           </select>
           {errors.DesiredCourse && (
             <p className="error-message">{errors.DesiredCourse.message}</p>
@@ -108,7 +116,7 @@ function PESYouthForm() {
         {/* Input and label */}
         <div className="input-field-and-label">
           <p className="input-label">
-            Student Age <span className="text-red-600">*</span>
+            Your Age <span className="text-red-600">*</span>
           </p>
           <input
             type="number"
@@ -123,7 +131,10 @@ function PESYouthForm() {
         </div>
         {/* Input and label */}
         <div className="input-field-and-label">
-          <p className="input-label">Mobile Number (with Whatsapp)</p>
+          <p className="input-label">
+            Mobile Number (with Whatsapp){" "}
+            <span className="text-red-600">*</span>
+          </p>
           <input
             type="text"
             className="input-field"
@@ -136,7 +147,9 @@ function PESYouthForm() {
         </div>
         {/* Input and label */}
         <div className="input-field-and-label">
-          <p className="input-label">Student Email</p>
+          <p className="input-label">
+            Your Email <span className="text-red-600">*</span>
+          </p>
           <input
             type="email"
             className="input-field"

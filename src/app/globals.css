@@ -125,3 +125,11 @@ tr {
 .partner-img{
   @apply bg-cover bg-center w-full h-full bg-no-repeat grid place-items-center
 }
+
+/* Dashboard grid */
+.applications-grid-item{
+  @apply rounded-[30px] aspect-square bg-white shadow-effect flex flex-col items-center justify-between sm:justify-center sm:gap-8 text-start p-4
+}
+.course-item{
+  @apply w-full flex flex-col sm:flex-row justify-between text-start rounded-[15px] py-4 px-8 bg-white shadow-effect
+}

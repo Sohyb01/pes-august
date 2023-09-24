@@ -103,7 +103,9 @@ function SchoolPartnershipsForm() {
         </div>
         {/* Input and label */}
         <div className="input-field-and-label">
-          <p className="input-label">Your Mobile (with Whatsapp)</p>
+          <p className="input-label">
+            Your Mobile (with Whatsapp) <span className="text-red-600">*</span>
+          </p>
           <input
             type="text"
             className="input-field"
@@ -116,7 +118,9 @@ function SchoolPartnershipsForm() {
         </div>
         {/* Input and label */}
         <div className="input-field-and-label">
-          <p className="input-label">Your Email</p>
+          <p className="input-label">
+            Your Email <span className="text-red-600">*</span>
+          </p>
           <input
             type="email"
             className="input-field"
@@ -129,7 +133,9 @@ function SchoolPartnershipsForm() {
         </div>
         {/* Input and label */}
         <div className="input-field-and-label">
-          <p className="input-label">Your Role in the School</p>
+          <p className="input-label">
+            Your Role in the School <span className="text-red-600">*</span>
+          </p>
           <input
             type="text"
             className="input-field"

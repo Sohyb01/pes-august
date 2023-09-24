@@ -135,3 +135,19 @@ enum YesOrNo {
   Yes
   No
 }
+
+model pesKidsCourse {
+  id Int @id @default(autoincrement())
+  courseName String @unique
+  courseDuration String
+  courseImageURL String?
+  isAvailable Boolean
+}
+
+model pesYouthCourse {
+  id Int @id @default(autoincrement())
+  courseName String @unique
+  courseDuration String
+  courseImageURL String?
+  isAvailable Boolean @default(true)
+}

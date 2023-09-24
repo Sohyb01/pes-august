@@ -143,7 +143,7 @@ function FranchisesForm() {
         {/* Input and label */}
         <div className="input-field-and-label">
           <p className="input-label">
-            Desired Franchise Location (City & Country) *
+            Desired Franchise Location (City & Country){" "}
             <span className="text-red-600">*</span>
           </p>
           <input

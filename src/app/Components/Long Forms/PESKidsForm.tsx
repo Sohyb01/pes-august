@@ -7,7 +7,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { addPesKidsApplicationData_SA } from "@/app/actions/add-pes-kids-data";
 
-function PESKidsForm() {
+function PESKidsForm(props: {
+  data: {
+    courseName: string;
+    courseDuration: string;
+  }[];
+}) {
   const {
     register,
     handleSubmit,
@@ -82,9 +87,12 @@ function PESKidsForm() {
             })}
           >
             <option value="">Select an option</option>
-            {/* Later, get the PES Kids courses options from the database */}
-            <option value="a">Option 1</option>
-            <option value="b">Option 2</option>
+            {/* Get the PES Kids courses options from the database */}
+            {props.data.map((course, key) => (
+              <option key={key} value={course.courseName}>
+                {course.courseName}
+              </option>
+            ))}
           </select>
           {errors.DesiredCourse && (
             <p className="error-message">{errors.DesiredCourse.message}</p>

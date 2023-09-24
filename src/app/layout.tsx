@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/GeneralNavbar";
 import Footer from "./Components/Footer";
 import { getServerSession } from "next-auth";
 import { ToastContainer } from "react-toastify";
@@ -24,7 +24,6 @@ export default async function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         {/* <SessionProvider session={session}> */}
-        <Navbar></Navbar>
         {children}
         <ToastContainer />
         <Footer></Footer>

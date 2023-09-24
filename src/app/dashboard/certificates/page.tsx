@@ -21,19 +21,6 @@ async function Dashboard() {
   };
 
   // Function to turn dates into better format
-  const improveDateFormat = (longDate: string) => {
-    // Parse the input string into a Date object
-    const datetime = new Date(longDate);
-
-    // Get the month, date, and year components
-    const month = datetime.toLocaleString("en-US", { month: "short" });
-    const date = datetime.getDate();
-    const year = datetime.getFullYear();
-    // Format the date components into the desired format
-    const formattedDate = `${month} ${date} ${year}`;
-
-    return formattedDate;
-  };
 
   return (
     <div className="flex flex-col items-center w-full min-h-[100vh] pt-[144px] ">

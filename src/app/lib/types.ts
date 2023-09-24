@@ -162,3 +162,16 @@ export const InstructorFormSchema = z.object({
 });
 
 export type InstructorFormDatatype = z.infer<typeof InstructorFormSchema>;
+
+export const AddCourseFormSchema = z.object({
+  courseName: z.string(),
+  courseDuration: z.string(),
+  courseImageURL: z.string().optional(),
+  isAvailable: z.boolean().default(true),
+  //   courseName String @unique
+  // courseDuration String
+  // courseImageURL String?
+  // isAvailable Boolean
+});
+
+export type AddCourseFormDatatype = z.infer<typeof AddCourseFormSchema>;
