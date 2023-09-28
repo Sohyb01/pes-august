@@ -30,6 +30,7 @@ export default function Home() {
                   certifications.
                 </p>
               </div>
+              {/* Buttons */}
               <div className="flex flex-col items-center gap-8">
                 <p className="tagline">GET STARTED</p>
                 {/* CTA Options Container */}

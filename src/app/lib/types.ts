@@ -175,3 +175,14 @@ export const AddCourseFormSchema = z.object({
 });
 
 export type AddCourseFormDatatype = z.infer<typeof AddCourseFormSchema>;
+
+export const AddPESMemberFormSchema = z.object({
+  name: z.string(),
+  role: z.string(),
+  imgUrl: z.string().optional(),
+  facebookUrl: z.string().optional(),
+  instagramUrl: z.string().optional(),
+  linkedinUrl: z.string().optional(),
+});
+
+export type AddPESMemberFormDatatype = z.infer<typeof AddPESMemberFormSchema>;

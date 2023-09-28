@@ -1,3 +1,4 @@
+import AddPESMemberForm from "@/app/Components/AddPESMemberForm";
 import FranchisesForm from "@/app/Components/Long Forms/FranchisesForm";
 import InstructorForm from "@/app/Components/Long Forms/InstructorForm";
 import PESKidsForm from "@/app/Components/Long Forms/PESKidsForm";
@@ -146,6 +147,13 @@ async function FormsTestingPage() {
           Apply to join as an Instructor
         </h1>
         <InstructorForm></InstructorForm>
+      </section>
+      {/* PES Apply as Instructor FORM */}
+      <section className="flex flex-col items-center w-full pb-[72px] section__styles gap-4 ">
+        <h1 className="text-3xl text-blue-700 font-bold heading">
+          Apply a PES Team member (to careers page)
+        </h1>
+        <AddPESMemberForm></AddPESMemberForm>
       </section>
     </div>
   );

@@ -133,3 +133,17 @@ tr {
 .course-item{
   @apply w-full flex flex-col sm:flex-row justify-between text-start rounded-[15px] py-4 px-8 bg-white shadow-effect
 }
+
+/* Members */
+.member-img{
+  @apply aspect-square w-full bg-cover
+}
+.mostafapfp{
+  background-image: url(./../../public/founders/mostafapfp.jpg);
+}
+.fawzypfp{
+  background-image: url(./../../public/founders/fawzypfp.jpg);
+}
+.redapfp{
+  background-image: url(./../../public/founders/redapfp.jpg);
+}

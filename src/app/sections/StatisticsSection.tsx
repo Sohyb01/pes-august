@@ -1,4 +1,5 @@
 import React from "react";
+import { RevealDiv } from "../lib/RevealDiv";
 
 function StatisticsSection() {
   return (

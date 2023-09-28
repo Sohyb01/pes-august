@@ -151,3 +151,13 @@ model pesYouthCourse {
   courseImageURL String?
   isAvailable Boolean @default(true)
 }
+
+model pesTeamMember {
+  id Int @id @default(autoincrement())
+  name String
+  role String
+  imgUrl String?
+  facebookUrl String?
+  instagramUrl String?
+  linkedinUrl String?
+}
