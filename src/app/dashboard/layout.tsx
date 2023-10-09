@@ -13,6 +13,7 @@ export default async function RootLayout({
       <DashboardNavbar></DashboardNavbar>
       {/* <SessionProvider session={session}> */}
       {children}
+
       {/* </SessionProvider> */}
     </>
   );

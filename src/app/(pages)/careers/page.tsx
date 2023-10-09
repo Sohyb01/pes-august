@@ -2,6 +2,7 @@ import GeneralNavbar from "@/app/Components/GeneralNavbar";
 import prisma from "@/app/lib/prisma";
 import React from "react";
 import Image from "next/image";
+import InstructorForm from "@/app/Components/Long Forms/InstructorForm";
 
 async function page() {
   const pesMembersData = await prisma.pesTeamMember.findMany({});
@@ -271,6 +272,16 @@ async function page() {
               );
             })}
           </div>
+        </section>
+        {/* PES Apply as Instructor FORM */}
+        <section
+          id="join-as-instructor"
+          className="flex flex-col items-center w-full pb-[72px] section__styles gap-4 "
+        >
+          <h1 className="text-2xl font-semibold heading text-blue-700">
+            Apply to join as an Instructor
+          </h1>
+          <InstructorForm></InstructorForm>
         </section>
       </div>
     </>

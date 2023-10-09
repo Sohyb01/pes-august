@@ -1,5 +1,4 @@
 // export { default } from "next-auth/middleware";
-
 import { withAuth, NextRequestWithAuth } from "next-auth/middleware";
 
 export default withAuth(

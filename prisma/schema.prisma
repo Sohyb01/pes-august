@@ -140,6 +140,7 @@ model pesKidsCourse {
   id Int @id @default(autoincrement())
   courseName String @unique
   courseDuration String
+  courseDescription String? @default("")
   courseImageURL String?
   isAvailable Boolean
 }
@@ -148,6 +149,7 @@ model pesYouthCourse {
   id Int @id @default(autoincrement())
   courseName String @unique
   courseDuration String
+  courseDescription String? @default("")
   courseImageURL String?
   isAvailable Boolean @default(true)
 }

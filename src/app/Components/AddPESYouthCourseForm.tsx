@@ -78,6 +78,11 @@ function AddPESYouthCourseForm() {
         required
         {...register("courseDuration")}
       />
+      <input
+        placeholder="Course Description"
+        className="input-field text-sm w-full"
+        {...register("courseDescription")}
+      />
       <button type="submit" disabled={isSubmitting} className="submit-button">
         Add course
       </button>

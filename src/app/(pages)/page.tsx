@@ -1,20 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import StatisticsSection from "../sections/StatisticsSection";
-import GeneralNavbar from "../Components/GeneralNavbar";
 
-export default function Home() {
+export default async function Home() {
   return (
     // All sections container
     <>
-      <GeneralNavbar></GeneralNavbar>
       <div className="flex flex-col items-center w-full">
         {/* Hero Section */}
         <section
           className="flex pb-[72px] section__styles relative flex-col items-center w-full fancy-line-border"
           id="cta"
         >
-          <div className="hero-section-content pt-[144px] flex flex-col items-center gap-10 max-w-[672px] z-10">
+          <div className="hero-section-content pt-[144px] flex flex-col items-center gap-10 max-w-[656px] lg:max-w-[672px] z-10">
             {/* Header, subtext, & Buttons */}
             <div className="flex flex-col items-center gap-8">
               {/* Header and subtext */}
@@ -42,7 +40,8 @@ export default function Home() {
                   >
                     <div className="bg-slate-400 aspect-video w-full"></div>
                     <h3 className="text-xl font-bold text-blue-700">
-                      PES <span className="text-orange-600">Kids</span>
+                      Join <br className="md:hidden" /> PES{" "}
+                      <span className="text-orange-600">Kids</span>
                     </h3>
                     <p className="text-blue-900 text-md">
                       Enroll your kids into our programs for kids, preparing
@@ -56,6 +55,7 @@ export default function Home() {
                   >
                     <div className="bg-slate-400 aspect-video w-full"></div>
                     <h3 className="text-xl font-bold text-blue-700">
+                      Join <br className="md:hidden" />
                       PES <span className="text-orange-600">Youth</span>
                     </h3>
                     <p className="text-blue-900 text-md">
@@ -97,7 +97,7 @@ export default function Home() {
               />
             </svg>
             <svg
-              className="absolute bottom-[102px] lg:bottom-[0px] left-[48px] lg:left-[144px]"
+              className="absolute bottom-[-20px] lg:bottom-[0px] left-[48px] lg:left-[144px]"
               xmlns="http://www.w3.org/2000/svg"
               width="56"
               height="68"
@@ -122,7 +122,7 @@ export default function Home() {
                 fill="#C7D2FE"
               />
             </svg>
-            <div className="graphic-img-1 bg-cover absolute bg-center w-[108px] lg:w-[144px] top-[480px] left-5 lg:top-[407px] lg:left-10 aspect-[108/169.51]"></div>
+            <div className="graphic-img-1 bg-cover absolute bg-center w-[108px] lg:w-[144px] top-[440px] left-0 lg:top-[407px] lg:left-10 aspect-[108/169.51]"></div>
             <div className="graphic-img-2 bg-cover top-[220px] right-5 lg:top-[144px] lg:right-10 absolute bg-center w-[108px] lg:w-[144px]  aspect-[108/142.88]"></div>
             <div className="graphic-img-3 bg-cover hidden lg:block absolute bg-center w-[144px] h-[216.99px] bottom-0 right-10"></div>
           </div>
@@ -223,8 +223,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Statistics Section */}
-        <StatisticsSection></StatisticsSection>
         {/* About PES Section (filler section) */}
         <div className="section__styles flex flex-col lg:flex-row gap-8 lg:gap-20 w-full py-[72px]">
           {/* Text part */}
@@ -254,6 +252,8 @@ export default function Home() {
             <div className="w-full aspect-video bg-slate-400"></div>
           </div>
         </div>
+        {/* Statistics Section */}
+        <StatisticsSection></StatisticsSection>
         {/* Learn modern section (filler section) */}
         <section className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full fancy-line-border">
           {/* Technologies container */}
@@ -272,15 +272,15 @@ export default function Home() {
             </div>
           </div>
           {/* Header, subtext, button */}
-          <div className="flex flex-col items-center lg:items-start gap-8 w-full lg:w-[570px]">
+          <div className="flex flex-col items-start gap-8 w-full lg:w-[570px]">
             {/* Header & Subtext */}
             <div className="flex flex-col gap-4">
               <p className="tagline text-start">METHODOLOGY</p>
-              <h1 className="text-2xl text-center font-semibold text-blue-700 lg:text-start">
+              <h1 className="text-2xl text-start font-semibold text-blue-700 lg:text-start">
                 Learn modern technologies and skills that are{" "}
                 <span className="text-orange-600">in-demand</span>
               </h1>
-              <p className="text-lg text-blue-900 text-center lg:text-start max-w-[600px]">
+              <p className="text-lg text-blue-900 text-start lg:text-start max-w-[600px]">
                 Our teaching integrates the skills & technologies that are
                 desired by modern companies. Building a strong foundation with
                 these skills gives your kids a head start.
