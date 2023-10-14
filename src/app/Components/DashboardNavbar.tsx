@@ -76,6 +76,9 @@ function DashboardNavbar() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/dashboard/pes-members">PES Team Members</Link>
+                </li>
+                <li>
                   <Link
                     href="/api/auth/signout"
                     className="bg-white text-blue-700 hover:bg-blue-200 duration-100 text-center grid place-items-center px-6 py-3 font-bold shadow-effect"
