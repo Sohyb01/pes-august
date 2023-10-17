@@ -3,8 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import prisma from "@/app/lib/prisma";
+import PESYouthForm from "../Components/Long Forms/PESYouthForm";
 
 async function PESYouth() {
+  // Get available pes kids course options
+  const PESYouthCourseOptions = await prisma.pesYouthCourse.findMany({
+    select: {
+      courseName: true,
+      courseDuration: true,
+    },
+  });
+
   const pesYouthCourses = await prisma.pesYouthCourse.findMany({});
 
   return (
@@ -34,13 +43,13 @@ async function PESYouth() {
               {/* Buttons container */}
               <div className="flex gap-8 w-full">
                 <Link
-                  href="/get-started"
+                  href="#courses"
                   className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[3px]"
                 >
                   View Courses
                 </Link>
                 <Link
-                  href="/SigninPage"
+                  href="/certificates"
                   className="bg-white text-blue-700 hover:bg-blue-200 duration-100 text-center grid place-items-center px-6 py-3 font-bold shadow-effect rounded-[3px]"
                 >
                   Verify Certificate
@@ -264,7 +273,7 @@ async function PESYouth() {
                     </p>
                   </div>
                   <Link
-                    href="#"
+                    href="#apply"
                     className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
                   >
                     Join Course
@@ -306,6 +315,16 @@ async function PESYouth() {
           </div>
           {/* Images */}
           <div className="w-full bg-slate-400 h-[300px] lg:h-[600px]"></div>
+        </section>
+        {/* PES YOUTH Education FORM */}
+        <section
+          className="flex flex-col items-center w-full py-[72px] section__styles gap-4"
+          id="apply"
+        >
+          <h1 className="text-2xl text-blue-700 font-semibold heading">
+            Apply to PES Youth Courses
+          </h1>
+          <PESYouthForm data={PESYouthCourseOptions}></PESYouthForm>
         </section>
       </div>
     </>

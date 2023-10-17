@@ -4,8 +4,16 @@ import React from "react";
 import Image from "next/image";
 import PESKidsNavbar from "@/app/Components/PESKidsNavbar";
 import prisma from "@/app/lib/prisma";
+import PESKidsForm from "../Components/Long Forms/PESKidsForm";
 
 async function PESKids() {
+  const PESKidsCourseOptions = await prisma.pesKidsCourse.findMany({
+    select: {
+      courseName: true,
+      courseDuration: true,
+    },
+  });
+
   const pesKidsCourses = await prisma.pesKidsCourse.findMany({});
 
   return (
@@ -31,13 +39,13 @@ async function PESKids() {
             {/* Buttons container */}
             <div className="flex gap-8 w-full">
               <Link
-                href="#"
+                href="#apply"
                 className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
               >
                 Free Session
               </Link>
               <Link
-                href="/SigninPage"
+                href="/certificates"
                 className="bg-white text-blue-700 hover:bg-blue-200 duration-100 text-center grid place-items-center px-6 py-3 font-bold shadow-effect rounded-[15px]"
               >
                 Verify Certificate
@@ -141,7 +149,7 @@ async function PESKids() {
                     </p>
                   </div>
                   <Link
-                    href="#"
+                    href="#apply"
                     className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
                   >
                     Join Course
@@ -226,7 +234,7 @@ async function PESKids() {
             <div className="frame-1 bg-cover bg-center relative md:w-full after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 aspect-video flex flex-col items-center justify-center gap-4 bg-neutral-700 rounded-[30px] after:rounded-[30px]">
               <p className="text-lg text-white z-20">Learn at Centre</p>
               <Link
-                href="#"
+                href="#apply"
                 className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
               >
                 Get Started
@@ -236,7 +244,7 @@ async function PESKids() {
             <div className="frame-2 bg-cover bg-center relative md:w-full after:absolute after:w-full after:h-full after:bg-black after:opacity-50 after:z-10 aspect-video flex flex-col items-center justify-center gap-4 bg-neutral-700 rounded-[30px] after:rounded-[30px]">
               <p className="text-lg text-white z-20">Learn online</p>
               <Link
-                href="#"
+                href="#apply"
                 className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
               >
                 Get Started
@@ -244,7 +252,6 @@ async function PESKids() {
             </div>
           </div>
         </section>
-
         {/* Our Services Section */}
         <section
           id="services"
@@ -300,7 +307,16 @@ async function PESKids() {
             </div>
           </div>
         </section>
-
+        {/* PES KIDS Education FORM */}
+        <section
+          className="flex flex-col items-center w-full py-[72px] section__styles gap-4"
+          id="apply"
+        >
+          <h1 className="text-2xl text-blue-700 font-semibold heading">
+            Apply to join a course
+          </h1>
+          <PESKidsForm data={PESKidsCourseOptions}></PESKidsForm>
+        </section>
         {/* Blue Strip Divider */}
         <div
           id="features"
