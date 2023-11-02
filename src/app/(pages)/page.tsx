@@ -38,7 +38,9 @@ export default async function Home() {
                     href="/pes-kids"
                     className="flex flex-col gap-2 p-4 shadow-effect bg-white text-center"
                   >
-                    <div className="bg-slate-400 aspect-video w-full"></div>
+                    <div className="bg-slate-400 aspect-video w-full relative">
+                      <Image src="/kids.png" alt="PES Kids Image" fill />
+                    </div>
                     <h3 className="text-xl font-bold text-blue-700">
                       Join <br className="md:hidden" /> PES{" "}
                       <span className="text-orange-600">Kids</span>
@@ -53,7 +55,9 @@ export default async function Home() {
                     href="/pes-youth"
                     className="flex flex-col gap-2 p-4 shadow-effect bg-white text-center"
                   >
-                    <div className="bg-slate-400 aspect-video w-full"></div>
+                    <div className="bg-slate-400 aspect-video w-full relative">
+                      <Image src="/youth.png" alt="PES Kids Image" fill />
+                    </div>
                     <h3 className="text-xl font-bold text-blue-700">
                       Join <br className="md:hidden" />
                       PES <span className="text-orange-600">Youth</span>
