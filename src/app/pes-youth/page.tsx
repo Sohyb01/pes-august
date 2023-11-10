@@ -177,20 +177,7 @@ async function PESYouth() {
               </div>
               {/* Name & Desc */}
               <div>
-                <p className="text-blue-700 font-bold">Person - Age</p>
-                <p className="text-blue-900">
-                  Among the top students who completed our Computer Science camp
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start text-start gap-4">
-              {/* Image */}
-              <div className="aspect-square w-full bg-slate-400 relative">
-                <Image src="/test2.jpeg" fill alt="student" />
-              </div>
-              {/* Name & Desc */}
-              <div>
-                <p className="text-blue-700 font-bold">Person - Age</p>
+                <p className="text-blue-700 font-bold">Salsabil Waleed</p>
                 <p className="text-blue-900">
                   Among the top students who completed our Computer Science camp
                 </p>
@@ -203,7 +190,20 @@ async function PESYouth() {
               </div>
               {/* Name & Desc */}
               <div>
-                <p className="text-blue-700 font-bold">Person - Age</p>
+                <p className="text-blue-700 font-bold">Abdelrahman Khaled</p>
+                <p className="text-blue-900">
+                  Among the top students who completed our Computer Science camp
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start text-start gap-4">
+              {/* Image */}
+              <div className="aspect-square w-full bg-slate-400 relative">
+                <Image src="/test2.jpeg" fill alt="student" />
+              </div>
+              {/* Name & Desc */}
+              <div>
+                <p className="text-blue-700 font-bold">Mohamed El Sayed</p>
                 <p className="text-blue-900">
                   Among the top students who completed our Computer Science camp
                 </p>
