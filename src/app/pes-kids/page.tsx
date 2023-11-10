@@ -174,7 +174,7 @@ async function PESKids() {
               {/* Testimonial */}
               <div className="flex gap-5 items-center text-start md:flex-col">
                 {/* Image */}
-                <div className="aspect-square rounded-[30px] w-full max-w-[130px] sm:max-w-[180px] md:max-w-none bg-slate-400"></div>
+                <div className="aspect-square rounded-[30px] w-full max-w-[130px] sm:max-w-[180px] md:max-w-none bg-slate-400 relative"></div>
                 {/* Text and name */}
                 <p className="text-start text-sm md:text-base w-full text-blue-800">
                   Excellent education and amazing staff, My son learned coding

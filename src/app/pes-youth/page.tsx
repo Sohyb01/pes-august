@@ -172,7 +172,9 @@ async function PESYouth() {
             {/* Member */}
             <div className="flex flex-col items-start text-start gap-4">
               {/* Image */}
-              <div className="aspect-square w-full bg-slate-400"></div>
+              <div className="aspect-square w-full bg-slate-400 relative">
+                <Image src="/test1.jpeg" fill alt="student" />
+              </div>
               {/* Name & Desc */}
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
@@ -184,7 +186,9 @@ async function PESYouth() {
             </div>
             <div className="flex flex-col items-start text-start gap-4">
               {/* Image */}
-              <div className="aspect-square w-full bg-slate-400"></div>
+              <div className="aspect-square w-full bg-slate-400 relative">
+                <Image src="/test2.jpeg" fill alt="student" />
+              </div>
               {/* Name & Desc */}
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
@@ -196,7 +200,9 @@ async function PESYouth() {
             </div>
             <div className="flex flex-col items-start text-start gap-4">
               {/* Image */}
-              <div className="aspect-square w-full bg-slate-400"></div>
+              <div className="aspect-square w-full bg-slate-400 relative">
+                <Image src="/test3.jpeg" fill alt="student" />
+              </div>
               {/* Name & Desc */}
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
