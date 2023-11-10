@@ -240,13 +240,7 @@ export default async function Home() {
             <p className="text-lg text-blue-900 lg:text-start max-w-[600px]">
               Our teaching integrates the skills & technologies that are desired
               by modern companies. Building a strong foundation with these
-              skills gives your kids a head start. <br /> <br />
-              Our teaching integrates the skills & technologies that are desired
-              by modern companies. Building a strong foundation with these
-              skills gives your kids a head start. <br /> <br />
-              Our teaching integrates the skills & technologies that are desired
-              by modern companies. Building a strong foundation with these
-              skills gives your kids a head start.
+              skills gives you a head start.
             </p>
           </div>
           {/* Images */}

@@ -179,8 +179,7 @@ async function PESYouth() {
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
                 <p className="text-blue-900">
-                  Completed the xyz program and received her certificate from
-                  abc
+                  Among the top students who completed our Computer Science camp
                 </p>
               </div>
             </div>
@@ -193,8 +192,7 @@ async function PESYouth() {
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
                 <p className="text-blue-900">
-                  Completed the xyz program and received her certificate from
-                  abc
+                  Among the top students who completed our Computer Science camp
                 </p>
               </div>
             </div>
@@ -207,8 +205,7 @@ async function PESYouth() {
               <div>
                 <p className="text-blue-700 font-bold">Person - Age</p>
                 <p className="text-blue-900">
-                  Completed the xyz program and received her certificate from
-                  abc
+                  Among the top students who completed our Computer Science camp
                 </p>
               </div>
             </div>
