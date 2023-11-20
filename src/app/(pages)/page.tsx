@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import StatisticsSection from "../sections/StatisticsSection";
+import PartnersSection from "../Components/Sections/PartnersSection";
+import ModernTechnologiesSection from "../Components/Sections/ModernTechnologiesSection";
 
 export default async function Home() {
   return (
@@ -132,101 +134,7 @@ export default async function Home() {
           </div>
         </section>
         {/* Partners section */}
-        <section className="flex flex-col w-full py-[72px] section__styles gap-8 fancy-line-border">
-          <p className="tagline text-center">OUR PARTNERS & CLIENTS INCLUDE</p>
-          {/* Clients container */}
-          <div className="flex flex-wrap items-center justify-center w-full gap-4 md:gap-8">
-            {/* individual client */}
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[168/173] h-full">
-                  <Image
-                    src="/partners/client1-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[204/181] h-full">
-                  <Image
-                    src="/partners/client3-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[172/172] h-full">
-                  <Image
-                    src="/partners/client2-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-square h-full">
-                  <Image
-                    src="/partners/client6-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[177/182] h-full">
-                  <Image
-                    src="/partners/client4-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[1410/736] w-full">
-                  <Image
-                    src="/partners/client5-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[793/778] h-full">
-                  <Image
-                    src="/partners/client7-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="grid place-items-center p-4 rounded-[3px] w-[146px] h-[111px] sm:h-[155px] md:h-[160px] lg:h-[170px] sm:w-[208px] md:w-[213px] lg:w-[226px]">
-              <div className="partner-img">
-                <div className="relative aspect-[114/60] w-full">
-                  <Image
-                    src="/partners/client8-min.png"
-                    alt="Ministry of youth and sports"
-                    fill
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PartnersSection></PartnersSection>
         {/* About PES Section (filler section) */}
         <div className="section__styles flex flex-col lg:flex-row gap-8 lg:gap-20 w-full py-[72px]">
           {/* Text part */}
@@ -253,46 +161,7 @@ export default async function Home() {
         {/* Statistics Section */}
         <StatisticsSection></StatisticsSection>
         {/* Learn modern section (filler section) */}
-        <section className="flex flex-col lg:flex-row-reverse lg:gap-10 lg:justify-between section__styles items-center py-[72px] gap-8 w-full fancy-line-border">
-          {/* Technologies container */}
-          <div className="flex flex-wrap md:flex-nowrap lg:flex-wrap width-[308px] lg:w-[350px] sm:w-full justify-center gap-8">
-            <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
-              <Image src="/microsoft.png" fill alt="Microsoft" />
-            </div>
-            <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
-              <Image src="/python.png" fill alt="Python" />
-            </div>
-            <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
-              <Image src="/scratch.png" fill alt="Scratch" />
-            </div>
-            <div className="aspect-square w-[138px] sm:w-[150px] md:w-full lg:w-[159px] bg-cover bg-center relative">
-              <Image src="/arduino.png" fill alt="Arduino" />
-            </div>
-          </div>
-          {/* Header, subtext, button */}
-          <div className="flex flex-col items-start gap-8 w-full lg:w-[570px]">
-            {/* Header & Subtext */}
-            <div className="flex flex-col gap-4">
-              <p className="tagline text-start">METHODOLOGY</p>
-              <h1 className="text-2xl text-start font-semibold text-blue-700 lg:text-start">
-                Learn modern technologies and skills that are{" "}
-                <span className="text-orange-600">in-demand</span>
-              </h1>
-              <p className="text-lg text-blue-900 text-start lg:text-start max-w-[600px]">
-                Our teaching integrates the skills & technologies that are
-                desired by modern companies. Building a strong foundation with
-                these skills gives your kids a head start.
-              </p>
-            </div>
-            {/* CTA Button */}
-            <a
-              href="#cta"
-              className="bg-orange-600 hover:bg-orange-400 duration-100 text-center grid place-items-center px-6 py-3 w-[160px] text-white font-bold shadow-effect"
-            >
-              Get Started
-            </a>
-          </div>
-        </section>
+        <ModernTechnologiesSection></ModernTechnologiesSection>
       </div>
     </>
   );
