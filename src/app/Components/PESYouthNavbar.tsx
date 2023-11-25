@@ -14,12 +14,12 @@ function Navbar() {
         </Link>
         {/* Links & buttons container */}
         <div className="items-center gap-8 nav-styling">
-          <Link
+          {/* <Link
             href="#services"
             className="text-white hover:text-blue-100 duration-100"
           >
             Services
-          </Link>
+          </Link> */}
           <Link
             href="#courses"
             className="text-white hover:text-blue-100 duration-100"

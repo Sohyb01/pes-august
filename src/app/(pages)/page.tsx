@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import StatisticsSection from "../sections/StatisticsSection";
+import StatisticsSection from "../Components/Sections/StatisticsSection";
 import PartnersSection from "../Components/Sections/PartnersSection";
 import ModernTechnologiesSection from "../Components/Sections/ModernTechnologiesSection";
 

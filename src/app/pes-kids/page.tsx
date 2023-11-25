@@ -1,10 +1,12 @@
-import StatisticsSection from "@/app/sections/StatisticsSection";
+import StatisticsSection from "@/app/Components/Sections/StatisticsSection";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import PESKidsNavbar from "@/app/Components/PESKidsNavbar";
 import prisma from "@/app/lib/prisma";
 import PESKidsForm from "../Components/Long Forms/PESKidsForm";
+import PesKidsTestimonialsSection from "../Components/Sections/PesKidsTestimonialsSection";
+import FeaturesSections from "../Components/FeaturesSections";
 
 async function PESKids() {
   const PESKidsCourseOptions = await prisma.pesKidsCourse.findMany({
@@ -160,56 +162,7 @@ async function PESKids() {
           </div>
         </section>
         {/* Testimonials Section */}
-        <section className="bg-white w-full py-[72px] grid place-items-center">
-          <div className="flex flex-col items-center w-full section__styles gap-8">
-            {/* Header and tagline and p */}
-            <div className="flex flex-col items-center text-start gap-4 w-full">
-              <p className="tagline text-start w-full">TESTIMONIALS</p>
-              <h1 className="heading font-semibold text-3xl text-start text-blue-700 w-full">
-                What others say
-              </h1>
-            </div>
-            {/* Testimonials Container */}
-            <div className="flex flex-col gap-8 md:grid md:grid-cols-3 md:grid-flow-row lg:gap-[56px]">
-              {/* Testimonial */}
-              <div className="flex gap-5 items-center text-start md:flex-col">
-                {/* Image */}
-                <div className="aspect-square rounded-[30px] w-full max-w-[130px] sm:max-w-[180px] md:max-w-none bg-slate-400 relative"></div>
-                {/* Text and name */}
-                <p className="text-start text-sm md:text-base w-full text-blue-800">
-                  Excellent education and amazing staff, My son learned coding
-                  in less than 3 months! I couldn&apos;t be happier. <br />
-                  <br />
-                  PERSON NAME
-                </p>
-              </div>
-              {/* Testimonial */}
-              <div className="flex gap-5 items-center text-start md:flex-col">
-                {/* Image */}
-                <div className="aspect-square rounded-[30px] w-full max-w-[130px] sm:max-w-[180px] md:max-w-none bg-slate-400"></div>
-                {/* Text and name */}
-                <p className="text-start text-sm md:text-base w-full text-blue-800">
-                  Excellent education and amazing staff, My son learned coding
-                  in less than 3 months! I couldn&apos;t be happier. <br />
-                  <br />
-                  PERSON NAME
-                </p>
-              </div>
-              {/* Testimonial */}
-              <div className="flex gap-5 items-center text-start md:flex-col">
-                {/* Image */}
-                <div className="aspect-square rounded-[30px] w-full max-w-[130px] sm:max-w-[180px] md:max-w-none bg-slate-400"></div>
-                {/* Text and name */}
-                <p className="text-start text-sm md:text-base w-full text-blue-800">
-                  Excellent education and amazing staff, My son learned coding
-                  in less than 3 months! I couldn&apos;t be happier. <br />
-                  <br />
-                  PERSON NAME
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PesKidsTestimonialsSection></PesKidsTestimonialsSection>
         {/* Frames section */}
         <section className="flex flex-col lg:flex-row section__styles items-center py-[72px] gap-10 lg:gap-20 w-full fancy-line-border">
           {/* Header & title */}
@@ -324,73 +277,7 @@ async function PESKids() {
         >
           Our Features
         </div>
-        {/* Feature section 1*/}
-        <section className="w-full section__styles py-[72px] flex flex-col md:flex-row-reverse gap-8 lg:gap-20 items-center">
-          <div className="aspect-[407/367] w-full max-w-[308px] md:max-w-[224px] lg:max-w-[407px] relative">
-            <Image src="/kids-features/tool-1.png" fill alt="Feature Image" />
-          </div>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <h1 className="text-start text-xl font-bold text-blue-700 w-full">
-              <span className="text-orange-600">Tools</span> for Teachers{" "}
-              <span className="text-orange-600">&</span> Students
-            </h1>
-            <p className="text-left lg:text-lg text-blue-900">
-              Session has a dynamic set of teaching tools built to be deployed
-              and used during session. Instructor can handout assignments in
-              real-time for students to complete and submit.
-            </p>
-          </div>
-        </section>
-        {/* Feature section 2*/}
-        <section className="w-full section__styles py-[72px] flex flex-col md:flex-row gap-8 lg:gap-20 items-center">
-          <div className="aspect-[407/458] w-full max-w-[308px] md:max-w-[224px] lg:max-w-[407px] relative">
-            <Image src="/kids-features/tool-2.png" fill alt="Feature Image" />
-          </div>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <h1 className="text-start text-xl font-bold text-blue-700 w-full">
-              Assessments, <span className="text-orange-600">Quizzes</span>{" "}
-              Tests
-            </h1>
-            <p className="text-left lg:text-lg text-blue-900">
-              We launch weekly and monthly live assignments, quizzes, and tests.
-              Student results are automatically entered in the online gradebook.
-            </p>
-          </div>
-        </section>
-        {/* Feature section 3*/}
-        <section className="w-full section__styles py-[72px] flex flex-col md:flex-row-reverse gap-8 lg:gap-20 items-center">
-          <div className="aspect-[407/303] w-full max-w-[308px] md:max-w-[224px] lg:max-w-[407px] relative">
-            <Image src="/kids-features/tool-3.png" fill alt="Feature Image" />
-          </div>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <h1 className="text-start text-xl font-bold text-blue-700 w-full">
-              Evaluation Management{" "}
-              <span className="text-orange-600">System for Students</span>{" "}
-            </h1>
-            <p className="text-left lg:text-lg text-blue-900">
-              We provides tools to help run and manage the session, such as the
-              Class Roster, Attendance, and more. With our gradebook,
-              instructors can review and grade tests and quizzes in real-time
-              and a report is sent to parents containing all the grades of their
-              child every month.
-            </p>
-          </div>
-        </section>
-        {/* Feature section 4*/}
-        <section className="w-full section__styles py-[72px] flex flex-col md:flex-row gap-8 lg:gap-20 items-center">
-          <div className="aspect-[407/278] w-full max-w-[308px] md:max-w-[224px] lg:max-w-[407px] relative">
-            <Image src="/kids-features/tool-4.png" fill alt="Feature Image" />
-          </div>
-          <div className="flex flex-col gap-4 items-center w-full">
-            <h1 className="text-start text-xl font-bold text-blue-700 w-full">
-              <span className="text-orange-600">One-on-one</span> Discussions
-            </h1>
-            <p className="text-left lg:text-lg text-blue-900">
-              Instructors and assistant instructors can speak with students
-              privately without leaving the session environment.
-            </p>
-          </div>
-        </section>
+        <FeaturesSections />
       </div>
     </>
   );
