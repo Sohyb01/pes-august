@@ -1,10 +1,35 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Navbar() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+
+      setVisible(
+        (isScrollingUp && currentScrollPos > 0) || currentScrollPos < 10
+      );
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos, visible]);
+
   return (
-    <nav className="fixed top-0 py-4 z-[10000] bg-blue-700 w-full text-white">
+    <nav
+      className={`fixed top-0 py-4 z-[10000] bg-blue-700 w-full text-white duration-200 ${
+        visible ? `` : `top-[-100%]`
+      }`}
+    >
       <div className="section__styles mx-auto flex justify-between">
         {/* Logo */}
         <Link href="/">

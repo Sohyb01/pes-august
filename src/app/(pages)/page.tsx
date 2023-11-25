@@ -154,8 +154,14 @@ export default async function Home() {
           {/* Images */}
           <div className="flex flex-col md:flex-row lg:flex-col gap-4 md:gap-8 w-full lg:max-w-[436px]">
             {/* Images */}
-            <div className="w-full aspect-video bg-slate-400"></div>
-            <div className="w-full aspect-video bg-slate-400"></div>
+            <div className="w-full aspect-video relative rounded-[30px]">
+              <Image
+                src="/pes-team-1.jpg"
+                alt="team"
+                fill
+                className="object-cover rounded-[30px]"
+              />
+            </div>
           </div>
         </div>
         {/* Statistics Section */}

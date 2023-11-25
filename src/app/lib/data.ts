@@ -31,7 +31,7 @@ export const pesKidsTestimonialsData = [
   },
   {
     imgUrl: "/testimonial-images/kids-3.jpg",
-    text: "Excellent education and amazing staff, My son learned coding in less than 3 months! I couldn't be happier.",
+    text: "I enrolled two of my kids into PES to learn programming and robotics, they have learned a lot and I will definitely continue with PES.",
     name: "Kamel Ali (Parent)",
   },
 ];

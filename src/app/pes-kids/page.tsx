@@ -177,8 +177,9 @@ async function PESKids() {
               by experienced instructors. <br />
               <br />
               Our courses & certifications are also accredited by recognized
-              institutions such as ..., ..., and ... What are you waiting for?
-              The future is waiting!
+              institutions such as the Ministry of Youth & Sports, ITIDA, STEM,
+              Kafr El-Sheihk University, and more. What are you waiting for? The
+              future is waiting!
             </p>
           </div>
           {/* Frames container */}

@@ -6,7 +6,7 @@
   line-height: 144%;
 }
 html{
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
   scroll-padding-top: 72px;
 }
 body {
