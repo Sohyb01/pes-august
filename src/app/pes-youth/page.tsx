@@ -6,6 +6,9 @@ import prisma from "@/app/lib/prisma";
 import PESYouthForm from "../Components/Long Forms/PESYouthForm";
 import PartnersSection from "../Components/Sections/PartnersSection";
 import AboutSection1 from "../Components/Sections/AboutSection1";
+import { pesYouthTestimonials } from "../lib/data";
+import test from "node:test";
+import PesYouthTesitmonialsSection from "../Components/Sections/PesYouthTesitmonialsSection";
 
 async function PESYouth() {
   // Get available pes kids course options
@@ -67,58 +70,7 @@ async function PESYouth() {
         {/* Partners section */}
         <PartnersSection></PartnersSection>
         {/* Testimonials Section */}
-        <section className="flex flex-col items-start w-full py-[72px] section__styles gap-10 ">
-          {/* Headline and tagline */}
-          <div className="flex flex-col w-full text-start gap-4">
-            <p className="text-sm tagline">TESTIMONIALS</p>
-            <h1 className="text-2xl font-semibold heading text-blue-700">
-              Our previous students
-            </h1>
-          </div>
-          {/* Grid */}
-          <div className="grid grid-cols-2 grid-flow-row md:grid-cols-3 gap-x-4 gap-y-10 sm:gap-x-4 sm:gap-y-4 md:gap-x-8 md:gap-y-14 lg:gap-x-14 w-full">
-            {/* Member */}
-            <div className="flex flex-col items-start text-start gap-4">
-              {/* Image */}
-              <div className="aspect-square w-full bg-slate-400 relative">
-                <Image src="/test1.jpeg" fill alt="student" />
-              </div>
-              {/* Name & Desc */}
-              <div>
-                <p className="text-blue-700 font-bold">Salsabil Waleed</p>
-                <p className="text-blue-900">
-                  Among the top students who completed our Computer Science camp
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start text-start gap-4">
-              {/* Image */}
-              <div className="aspect-square w-full bg-slate-400 relative">
-                <Image src="/test3.jpeg" fill alt="student" />
-              </div>
-              {/* Name & Desc */}
-              <div>
-                <p className="text-blue-700 font-bold">Abdelrahman Khaled</p>
-                <p className="text-blue-900">
-                  Among the top students who completed our Computer Science camp
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col items-start text-start gap-4">
-              {/* Image */}
-              <div className="aspect-square w-full bg-slate-400 relative">
-                <Image src="/test2.jpeg" fill alt="student" />
-              </div>
-              {/* Name & Desc */}
-              <div>
-                <p className="text-blue-700 font-bold">Mohamed El Sayed</p>
-                <p className="text-blue-900">
-                  Among the top students who completed our Computer Science camp
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PesYouthTesitmonialsSection />
         {/* Our courses & programs Section */}
         <section
           id="courses"

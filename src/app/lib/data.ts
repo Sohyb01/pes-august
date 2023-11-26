@@ -130,19 +130,19 @@ export const footerLinks = [
 
 export const pesYouthTestimonials = [
   {
-    imgUrl: "/student-images/1.jpeg",
+    imgUrl: "/student-images/1.jpg",
     name: "Salsabil Waleed",
     description:
       "Among the top students who completed our Computer Science camp",
   },
   {
-    imgUrl: "/student-images/2.jpeg",
+    imgUrl: "/student-images/2.jpg",
     name: "Abdelrahman Khaled",
     description:
       "Among the top students who completed our Computer Science camp",
   },
   {
-    imgUrl: "/student-images/3.jpeg",
+    imgUrl: "/student-images/3.jpg",
     name: "Mohamed El Sayed",
     description:
       "Among the top students who completed our Computer Science camp",
