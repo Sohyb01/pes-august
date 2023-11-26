@@ -136,7 +136,10 @@ export default async function Home() {
         {/* Partners section */}
         <PartnersSection></PartnersSection>
         {/* About PES Section (filler section) */}
-        <div className="section__styles flex flex-col lg:flex-row gap-8 lg:gap-20 w-full py-[72px]">
+        <div
+          id="about"
+          className="section__styles flex flex-col lg:flex-row gap-8 lg:gap-20 w-full py-[72px]"
+        >
           {/* Text part */}
           <div className="flex text-start flex-col gap-4 w-full lg:max-w-[484px]">
             <div className="flex flex-col gap-4 text-start">

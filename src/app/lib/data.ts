@@ -101,10 +101,31 @@ export const socialMedias = [
 ];
 
 export const footerLinks = [
-  { text: "", url: "" },
-  { text: "", url: "" },
-  { text: "", url: "" },
-  { text: "", url: "" },
+  // Column one
+  [
+    { text: "About", url: "/#about" },
+    { text: "Certificates", url: "/certificates" },
+    { text: "Careers", url: "/careers" },
+    { text: "Partnerships", url: "/partnerships" },
+    { text: "Franchise", url: "/franchises" },
+    { text: "Sign In", url: "/Signinpage" },
+  ],
+  // Column two (PES Youth)
+  [
+    { text: "Services", url: "/pes-youth#services" },
+    { text: "Courses", url: "/pes-youth#courses" },
+    { text: "Features", url: "/pes-youth#features" },
+    { text: "Projects", url: "/pes-youth/projects" },
+    { text: "Free Call", url: "/pes-youth/freecall" },
+  ],
+  // Column three (PES Kids)
+  [
+    { text: "Services", url: "/pes-kids#services" },
+    { text: "Courses", url: "/pes-kids#courses" },
+    { text: "Features", url: "/pes-kids#features" },
+    { text: "Projects", url: "/pes-kids/projects" },
+    { text: "Free Call", url: "/pes-kids/frecall" },
+  ],
 ];
 
 export const pesYouthTestimonials = [
