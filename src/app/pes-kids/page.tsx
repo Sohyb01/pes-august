@@ -7,14 +7,15 @@ import prisma from "@/app/lib/prisma";
 import PESKidsForm from "../Components/Long Forms/PESKidsForm";
 import PesKidsTestimonialsSection from "../Components/Sections/PesKidsTestimonialsSection";
 import FeaturesSections from "../Components/FeaturesSections";
+import { pesKidsTracks, pesServices, whatsappUrl } from "../lib/data";
 
 async function PESKids() {
-  const PESKidsCourseOptions = await prisma.pesKidsCourse.findMany({
-    select: {
-      courseName: true,
-      courseDuration: true,
-    },
-  });
+  // const PESKidsCourseOptions = await prisma.pesKidsCourse.findMany({
+  //   select: {
+  //     courseName: true,
+  //     courseDuration: true,
+  //   },
+  // });
 
   const pesKidsCourses = await prisma.pesKidsCourse.findMany({});
 
@@ -101,23 +102,30 @@ async function PESKids() {
           {/* Courses Container */}
           <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-flow-row w-full">
             {/* Courses */}
-            {pesKidsCourses.map((course, key) => {
+            {pesKidsTracks.map((course, key) => {
               return (
                 <div
                   key={key}
                   className="flex flex-col w-full gap-8 items-start text-start bg-white shadow-effect p-4 lg:p-6 rounded-[3px]"
                 >
                   {/* Image */}
-                  <div className="rounded-[3px] w-full min-h-[146px] sm:min-h-[216px] md:min-h-[170px] lg:min-h-[245px] bg-slate-400"></div>
+                  <div className="rounded-[3px] w-full min-h-[146px] sm:min-h-[216px] md:min-h-[170px] lg:min-h-[245px] relative">
+                    <Image
+                      src={course.imageUrl}
+                      alt={course.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   {/* Name and description */}
                   <div className="flex flex-col text-start w-full h-full gap-4">
                     {/* Name and duration */}
                     <div className="flex w-full justify-between items-center text-start">
                       <p className="text-blue-700 font-bold text-lg">
-                        {course.courseName}
+                        {course.title}
                       </p>
                       {/* Time label */}
-                      <div className="flex items-center gap-2 text-neutral-500">
+                      {/* <div className="flex items-center gap-2 text-neutral-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -143,7 +151,7 @@ async function PESKids() {
                           </defs>
                         </svg>
                         <p className="w-[72px]">{course.courseDuration}</p>
-                      </div>
+                      </div> */}
                     </div>
                     {/* Description */}
                     <p className="text-blue-900 w-full">
@@ -151,7 +159,8 @@ async function PESKids() {
                     </p>
                   </div>
                   <Link
-                    href="#apply"
+                    href={whatsappUrl}
+                    target="_blank"
                     className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
                   >
                     Join Course
@@ -220,49 +229,31 @@ async function PESKids() {
           </div>
           {/* Services Container */}
           <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-flow-row w-full">
-            {/* Service */}
-            <div className="flex flex-col w-full gap-4 items-center text-start bg-white shadow-effect p-4 lg:p-6 rounded-[30px]">
-              {/* Image */}
-              <div className="aspect-video rounded-[15px] w-full bg-slate-400"></div>
-              {/* Text and name */}
-              <p className="text-blue-700 w-full font-bold">
-                Courses & Training
-              </p>
-              <p className="text-blue-900 w-full">
-                Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor
-                sit amet, ipsum dolor sit amet, ipsum dolor sit amet,{" "}
-              </p>
-            </div>
-            {/* Service */}
-            <div className="flex flex-col w-full gap-4 items-center text-start bg-white shadow-effect p-4 lg:p-6 rounded-[30px]">
-              {/* Image */}
-              <div className="aspect-video rounded-[15px] w-full bg-slate-400"></div>
-              {/* Text and name */}
-              <p className="text-blue-700 w-full font-bold">
-                Summer Camps & Workshops
-              </p>
-              <p className="text-blue-900 w-full">
-                Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor
-                sit amet, ipsum dolor sit amet, ipsum dolor sit amet,{" "}
-              </p>
-            </div>
-            {/* Service */}
-            <div className="flex flex-col w-full gap-4 items-center text-start bg-white shadow-effect p-4 lg:p-6 rounded-[30px]">
-              {/* Image */}
-              <div className="aspect-video rounded-[15px] w-full bg-slate-400"></div>
-              {/* Text and name */}
-              <p className="text-blue-700 w-full font-bold">
-                AI & Robotics Components
-              </p>
-              <p className="text-blue-900 w-full">
-                Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor
-                sit amet, ipsum dolor sit amet, ipsum dolor sit amet,{" "}
-              </p>
-            </div>
+            {pesServices.map((service, index) => (
+              <div
+                key={index}
+                className="flex flex-col w-full gap-4 items-center text-start bg-white shadow-effect p-4 lg:p-6 rounded-[30px]"
+              >
+                {/* Image */}
+                <div className="aspect-video rounded-[15px] w-full relative overflow-hidden">
+                  <Image
+                    src={service.imageUrl}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                {/* Text and name */}
+                <p className="text-blue-700 w-full font-bold">
+                  {service.title}
+                </p>
+                <p className="text-blue-900 w-full">{service.description}</p>
+              </div>
+            ))}
           </div>
         </section>
         {/* PES KIDS Education FORM */}
-        <section
+        {/* <section
           className="flex flex-col items-center w-full py-[72px] section__styles gap-4"
           id="apply"
         >
@@ -270,7 +261,7 @@ async function PESKids() {
             Apply to join a course
           </h1>
           <PESKidsForm data={PESKidsCourseOptions}></PESKidsForm>
-        </section>
+        </section> */}
         {/* Blue Strip Divider */}
         <div
           id="features"

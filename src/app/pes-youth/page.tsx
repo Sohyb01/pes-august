@@ -6,20 +6,20 @@ import prisma from "@/app/lib/prisma";
 import PESYouthForm from "../Components/Long Forms/PESYouthForm";
 import PartnersSection from "../Components/Sections/PartnersSection";
 import AboutSection1 from "../Components/Sections/AboutSection1";
-import { pesYouthTestimonials } from "../lib/data";
+import { pesYouthTestimonials, pesYouthTracks, whatsappUrl } from "../lib/data";
 import test from "node:test";
 import PesYouthTesitmonialsSection from "../Components/Sections/PesYouthTesitmonialsSection";
 
 async function PESYouth() {
   // Get available pes kids course options
-  const PESYouthCourseOptions = await prisma.pesYouthCourse.findMany({
-    select: {
-      courseName: true,
-      courseDuration: true,
-    },
-  });
+  // const PESYouthCourseOptions = await prisma.pesYouthCourse.findMany({
+  //   select: {
+  //     courseName: true,
+  //     courseDuration: true,
+  //   },
+  // });
 
-  const pesYouthCourses = await prisma.pesYouthCourse.findMany({});
+  // const pesYouthCourses = await prisma.pesYouthCourse.findMany({});
 
   return (
     <>
@@ -86,23 +86,30 @@ async function PESYouth() {
           {/* Courses Container */}
           <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:grid-flow-row w-full">
             {/* Courses */}
-            {pesYouthCourses.map((course, key) => {
+            {pesYouthTracks.map((course, key) => {
               return (
                 <div
                   key={key}
                   className="flex flex-col w-full gap-8 items-start text-start bg-white shadow-effect p-4 lg:p-6 rounded-[3px]"
                 >
                   {/* Image */}
-                  <div className="rounded-[3px] w-full min-h-[146px] sm:min-h-[216px] md:min-h-[170px] lg:min-h-[245px] bg-slate-400"></div>
+                  <div className="rounded-[3px] w-full min-h-[146px] sm:min-h-[216px] md:min-h-[170px] lg:min-h-[245px] relative">
+                    <Image
+                      src={course.imageUrl}
+                      alt={course.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   {/* Name and description */}
                   <div className="flex flex-col text-start w-full h-full gap-4">
                     {/* Name and duration */}
                     <div className="flex w-full justify-between items-center text-start">
                       <p className="text-blue-700 font-bold text-lg">
-                        {course.courseName}
+                        {course.title}
                       </p>
                       {/* Time label */}
-                      <div className="flex items-center gap-2 text-neutral-500">
+                      {/* <div className="flex items-center gap-2 text-neutral-500">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -128,7 +135,7 @@ async function PESYouth() {
                           </defs>
                         </svg>
                         <p className="w-[72px]">{course.courseDuration}</p>
-                      </div>
+                      </div> */}
                     </div>
                     {/* Description */}
                     <p className="text-blue-900 w-full">
@@ -136,7 +143,8 @@ async function PESYouth() {
                     </p>
                   </div>
                   <Link
-                    href="#apply"
+                    href={whatsappUrl}
+                    target="_blank"
                     className="bg-orange-600 hover:bg-orange-400 duration-100 text-center z-20 grid place-items-center px-6 py-3 text-white font-bold shadow-effect rounded-[15px]"
                   >
                     Join Course
@@ -149,7 +157,7 @@ async function PESYouth() {
         {/* About section 1 */}
         <AboutSection1></AboutSection1>
         {/* PES YOUTH Education FORM */}
-        <section
+        {/* <section
           className="flex flex-col items-center w-full py-[72px] section__styles gap-4"
           id="apply"
         >
@@ -157,7 +165,7 @@ async function PESYouth() {
             Apply to PES Youth Courses
           </h1>
           <PESYouthForm data={PESYouthCourseOptions}></PESYouthForm>
-        </section>
+        </section> */}
       </div>
     </>
   );

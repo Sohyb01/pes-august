@@ -1,4 +1,74 @@
-// Our Partners & Clients Include
+export const whatsappUrl = "https://wa.me/201285488199";
+
+export const pesKidsTracks = [
+  {
+    title: "Computer Fundamentals",
+    imageUrl: "/tracks/computer.png",
+    courseDescription:
+      "Lay the groundwork with essential knowledge on computer components, software, and basic operations to empower your digital literacy and technical understanding.",
+  },
+  {
+    title: "Programming",
+    imageUrl: "/tracks/programming.png",
+    courseDescription:
+      "Master the foundational principles of coding, algorithms, and problem-solving. Gain a solid footing in various programming languages, setting the stage for advanced development skills.",
+  },
+  {
+    title: "Robotics",
+    imageUrl: "/tracks/robotics.png",
+    courseDescription:
+      "Explore the core concepts of AI, including machine learning, neural networks, and data analytics. Acquire the knowledge to understand and leverage AI technologies in various applications.",
+  },
+  {
+    title: "Artificial Intelligence",
+    imageUrl: "/tracks/AI.png",
+    courseDescription:
+      "Dive into the world of robotics, learning about hardware, sensors, and programming for robots. Develop a strong foundation to embark on exciting journeys in the field of robotics.",
+  },
+];
+
+export const pesYouthTracks = [
+  {
+    title: "Web Development",
+    imageUrl: "/tracks/web.png",
+    courseDescription:
+      "Explore the core concepts of AI, including machine learning, neural networks, and data analytics. Acquire the knowledge to understand and leverage AI technologies in various applications.",
+  },
+  {
+    title: "Robotics",
+    imageUrl: "/tracks/robotics.png",
+    courseDescription:
+      "Explore the core concepts of AI, including machine learning, neural networks, and data analytics. Acquire the knowledge to understand and leverage AI technologies in various applications.",
+  },
+  {
+    title: "Artificial Intelligence",
+    imageUrl: "/tracks/AI.png",
+    courseDescription:
+      "Dive into the world of robotics, learning about hardware, sensors, and programming for robots. Develop a strong foundation to embark on exciting journeys in the field of robotics.",
+  },
+];
+
+export const pesServices = [
+  {
+    title: "Courses & Training",
+    description:
+      "Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, ipsum dolor sit amet, ipsum dolor sit amet",
+    imageUrl: "/services/training.png",
+  },
+  {
+    title: "Summer Camps & Workshops",
+    description:
+      "Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, ipsum dolor sit amet, ipsum dolor sit amet",
+    imageUrl: "/services/camps.png",
+  },
+  {
+    title: "AI & Robotics Components",
+    description:
+      "Courses & Training lorem ipsum dolor sit amet, lorem ipsum dolor sit amet, ipsum dolor sit amet, ipsum dolor sit amet",
+    imageUrl: "/services/components.png",
+  },
+];
+
 export const partnerLogoImgs = [
   "/partners/client1-min.png",
   "/partners/client2-min.png",
